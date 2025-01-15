@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white">
+
+
+
+    <TextView
+        android:id="@+id/Text"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Write your perimeters)))"
+        android:textSize="40sp"
+        android:textColor="@color/pink"
+        android:layout_marginBottom="24dp"/>
+    <TextView
+        android:id="@+id/questionText_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. Write your perimeters)))"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="10dp"/>
+
+
+    <RadioGroup
+        android:id="@+id/optionsGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/option1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Farsighted(+)"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:id="@+id/option2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Short sighted(-)"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:textColor="@color/black" />
+
+
+    </RadioGroup>
+    <TextView
+        android:id="@+id/questionText_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2. Write deferance)))"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/numberInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Enter it..."
+        android:layout_marginTop="16dp"
+        android:maxLength="20"
+        android:textSize="25sp"/>
+
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="214dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="24dp"
+        android:text="Submit" />
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thank you for your answer!"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="197dp"
+        app:srcCompat="@drawable/glasses" />
+
+
+</LinearLayout>

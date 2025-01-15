@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:title="Quize"
+        android:id="@+id/quiz_m"
+        />
+    <item android:title="Camera"
+        android:id="@+id/camera_m"
+        />
+    <item android:title="Advices"
+        android:id="@+id/advices_m"
+        />
+
+</menu>

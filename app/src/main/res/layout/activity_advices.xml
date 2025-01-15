@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF"
+
+    tools:context=".AdvicesActivity">
+
+    <!-- Scrollable content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header Section -->
+            <TextView
+                android:id="@+id/headerTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Eye Care Tips: Farsightedness and Shortsightedness"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#2E3B4E"
+                android:gravity="center"
+                android:padding="1dp"
+                android:background="#E3F2FD"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Farsightedness Section -->
+            <TextView
+                android:id="@+id/farsightedTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What is Farsightedness?"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="#0288D1"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/farsightedDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Farsightedness, also called hyperopia, is a condition where distant objects are clearer than nearby ones. It occurs when the eye is too short or the cornea is not curved enough, causing light to focus behind the retina instead of on it. Symptoms include blurry vision, eye strain, and headaches."
+                android:textSize="15sp"
+                android:textColor="#4A4A4A"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/farsightedTipsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tips for Managing Farsightedness:"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="#0288D1"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/farsightedTipsDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Regular eye checkups.\n• Wear prescribed glasses or contact lenses.\n• Reduce eye strain by taking frequent breaks from screens.\n• Maintain a healthy diet rich in Vitamin A."
+                android:textSize="15sp"
+                android:textColor="#4A4A4A"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Shortsightedness Section -->
+            <TextView
+                android:id="@+id/shortsightedTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What is Shortsightedness?"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="#0288D1"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/shortsightedDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Shortsightedness, or myopia, is when close objects appear clear, but distant objects look blurry. It is caused by an elongated eyeball or excessive curvature of the cornea, which focuses light in front of the retina instead of directly on it. Symptoms include squinting, eye fatigue, and difficulty seeing distant objects."
+                android:textSize="16sp"
+                android:textColor="#4A4A4A"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/shortsightedTipsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tips for Managing Shortsightedness:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#0288D1"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/shortsightedTipsDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:lineSpacingExtra="3dp"
+                android:text="• Use prescribed glasses or contact lenses.\n• Limit screen time and ensure proper lighting.\n• Engage in outdoor activities to reduce eye strain.\n• Consider corrective procedures like LASIK for severe cases."
+                android:textColor="#4A4A4A"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
