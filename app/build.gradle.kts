@@ -33,7 +33,7 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.youtubeplayer)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)

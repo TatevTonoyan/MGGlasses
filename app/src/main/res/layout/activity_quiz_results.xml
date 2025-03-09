@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/image_vegetable"
+        android:layout_marginTop="5dp"
+        android:layout_width="380dp"
+        android:layout_height="300dp"
+        app:srcCompat="@drawable/vegetable"/>
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:layout_marginStart="50dp"
+        android:text="Your result will be here!"
+        android:textColor="@color/putik"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_back_to_profile"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/putik"
+        android:text="Back to Profile"
+        android:textSize="17dp"
+        android:layout_marginStart="50dp"
+        android:textColor="@color/purple" />
+    <ImageView
+        android:id="@+id/image_pill"
+        android:layout_marginTop="5dp"
+        android:layout_width="380dp"
+        android:layout_height="300dp"
+        app:srcCompat="@drawable/pill"/>
+</LinearLayout>

@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     android:id="@+id/main_reg"
     tools:context=".RegisterActivity"
-    android:background="@color/light">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="15dp"
-    android:background="@color/pink"
-    android:layout_margin="15dp">
+    android:background="@color/cream">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="15dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -20,114 +20,163 @@
             android:id="@+id/Head"
             android:layout_marginTop="30dp"
             android:text="Your information"
+            android:textSize="40dp"
+            android:textStyle="italic"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/reg_username"
-        android:layout_marginTop="60dp"
-        android:text="Username"
-        android:textColor="#555555"
-        android:textSize="36sp" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/username"
-        android:hint="Enter your full name"
-        android:inputType="textPersonName"
-        android:textSize="16sp"
-        android:layout_marginStart="50dp"
-        android:background="@drawable/border"
-        android:padding="10dp"
-        android:layout_below="@+id/reg_username"
-        />
-    <ImageView
-        android:id="@+id/image_username"
-        android:layout_width="48dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/reg_username"
-        app:srcCompat="@drawable/username" />
+        <!-- Username Field -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reg_username"
+            android:layout_marginTop="90dp"
+            android:text="Username"
+            android:textColor="#555555"
+            android:textSize="20sp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/reg_email"
-        android:layout_marginTop="20dp"
-        android:text="Email"
-        android:padding="6dp"
-        android:layout_below="@+id/username"
-        android:textColor="#555555"
-        android:textSize="36sp" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/email"
-        android:hint="Enter your email"
-        android:inputType="textEmailAddress"
-        android:textSize="16sp"
-        android:padding="10dp"
-        android:layout_marginStart="50dp"
-        android:background="@drawable/border"
-        android:layout_below="@+id/reg_email"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/username"
+            android:hint="Enter your full name"
+            android:inputType="textPersonName"
+            android:textSize="17sp"
+            android:layout_marginStart="50dp"
+            android:background="@drawable/border"
+            android:padding="10dp"
+            android:layout_below="@+id/reg_username"
+            />
 
-    <ImageView
-        android:id="@+id/image_mail"
-        android:layout_width="48dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/reg_email"
-        app:srcCompat="@drawable/mail" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/reg_password"
-        android:layout_marginTop="20dp"
-        android:text="Password"
-        android:padding="6dp"
-        android:layout_below="@+id/email"
-        android:textColor="#555555"
-        android:textSize="36sp" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/password"
-        android:hint="Enter your password"
-        android:inputType="textPassword"
-        android:textSize="16sp"
-        android:padding="10dp"
-        android:layout_marginStart="50dp"
-        android:layout_below="@+id/reg_password"
-        android:background="@drawable/border"
-        />
+        <ImageView
+            android:id="@+id/image_username"
+            android:layout_width="48dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/reg_username"
+            app:srcCompat="@drawable/username" />
 
-    <ImageView
-        android:id="@+id/image_password"
-        android:layout_width="50dp"
-        android:layout_height="58dp"
-        android:layout_below="@+id/reg_password"
-        app:srcCompat="@drawable/password" />
+        <!-- Email Field -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reg_email"
+            android:layout_marginTop="20dp"
+            android:text="Email"
+            android:padding="6dp"
+            android:layout_below="@+id/username"
+            android:textColor="#555555"
+            android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/btn_reg"
-        android:layout_width="208dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/password"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="49dp"
-        android:layout_marginRight="70dp"
-        android:text="Register" />
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/progressBar"
-        android:layout_below="@+id/btn_reg"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:elevation="10dp"
-        android:visibility="gone"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/email"
+            android:hint="Enter your email"
+            android:inputType="textEmailAddress"
+            android:textSize="16sp"
+            android:padding="10dp"
+            android:layout_marginStart="50dp"
+            android:background="@drawable/border"
+            android:layout_below="@+id/reg_email"
+            />
 
+        <ImageView
+            android:id="@+id/image_mail"
+            android:layout_width="48dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/reg_email"
+            app:srcCompat="@drawable/mail" />
 
-</RelativeLayout>
+        <!-- Password Field -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reg_password"
+            android:layout_marginTop="20dp"
+            android:text="Password"
+            android:padding="6dp"
+            android:layout_below="@+id/email"
+            android:textColor="#555555"
+            android:textSize="20sp" />
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/password"
+            android:hint="Enter your password"
+            android:inputType="textPassword"
+            android:textSize="16sp"
+            android:padding="10dp"
+            android:layout_marginStart="50dp"
+            android:background="@drawable/border"
+            android:layout_below="@+id/reg_password"
+            />
+
+        <ImageView
+            android:id="@+id/image_password"
+            android:layout_width="50dp"
+            android:layout_height="58dp"
+            android:layout_below="@+id/reg_password"
+            app:srcCompat="@drawable/password" />
+
+        <!-- Confirm Password Field -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reg_confirm_password"
+            android:layout_marginTop="20dp"
+            android:text="Confirm Password"
+            android:padding="6dp"
+            android:layout_below="@+id/password"
+            android:textColor="#555555"
+            android:textSize="20sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/confirm_password"
+            android:hint="Confirm your password"
+            android:inputType="textPassword"
+            android:textSize="16sp"
+            android:padding="10dp"
+            android:layout_marginStart="50dp"
+            android:background="@drawable/border"
+            android:layout_below="@+id/reg_confirm_password"
+            />
+
+        <ImageView
+            android:id="@+id/image_confirm_password"
+            android:layout_width="50dp"
+            android:layout_height="58dp"
+            android:layout_below="@+id/reg_confirm_password"
+            app:srcCompat="@drawable/password" />
+
+        <!-- Register Button -->
+        <Button
+            android:id="@+id/btn_reg"
+
+            android:layout_below="@+id/confirm_password"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="70dp"
+            android:text="Register"
+            android:layout_width="2000dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            />
+
+        <!-- Progress Bar -->
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:layout_below="@+id/btn_reg"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:elevation="10dp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
 </ScrollView>

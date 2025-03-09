@@ -1,59 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F0F2F5"
     android:padding="16dp"
-    android:background="#FFFFFF"
+    android:scrollbars="none">
 
-    tools:context=".AdvicesActivity">
-
-    <!-- Scrollable content -->
-    <ScrollView
+    <!-- LinearLayout to contain all the content -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="none">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:paddingBottom="30dp">
+
+        <!-- Header Section -->
+        <TextView
+            android:id="@+id/headerTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Eye Care Tips: Farsightedness and Shortsightedness"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="14dp"
+            android:background="#0288D1"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Farsightedness Section -->
+        <TextView
+            android:id="@+id/farsightedTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="What is Farsightedness?"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#0288D1"
+            android:layout_marginBottom="8dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Header Section -->
-            <TextView
-                android:id="@+id/headerTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Eye Care Tips: Farsightedness and Shortsightedness"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#2E3B4E"
-                android:gravity="center"
-                android:padding="1dp"
-                android:background="#E3F2FD"
-                android:layout_marginBottom="8dp" />
-
-            <!-- Farsightedness Section -->
-            <TextView
-                android:id="@+id/farsightedTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="What is Farsightedness?"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:textColor="#0288D1"
-                android:layout_marginBottom="8dp" />
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
 
             <TextView
                 android:id="@+id/farsightedDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Farsightedness, also called hyperopia, is a condition where distant objects are clearer than nearby ones. It occurs when the eye is too short or the cornea is not curved enough, causing light to focus behind the retina instead of on it. Symptoms include blurry vision, eye strain, and headaches."
+                android:text="Farsightedness, also called hyperopia, is a condition where distant objects are clearer than nearby ones. It occurs when the eye is too short or the cornea is not curved enough, causing light to focus behind the retina instead of on it."
                 android:textSize="15sp"
                 android:textColor="#4A4A4A"
+
                 android:lineSpacingExtra="3dp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/farsightedCausesTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Causes of Farsightedness:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#0288D1"
                 android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/farsightedCausesDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Genetic factors (family history).\n• Age-related changes.\n• Eye shape abnormalities.\n• Excessive screen time causing eye strain."
+                android:textSize="14sp"
+                android:textColor="#4A4A4A"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/farsightedSymptomsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Symptoms of Farsightedness:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#0288D1"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/farsightedSymptomsDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Blurry vision for close objects.\n• Eyestrain or discomfort when reading or using a computer.\n• Frequent headaches.\n• Difficulty with tasks that require close focus."
+                android:textSize="14sp"
+                android:textColor="#4A4A4A"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/farsightedTreatmentTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Treatment Options for Farsightedness:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#0288D1"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/farsightedTreatmentDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Prescription glasses or contact lenses.\n• Refractive surgery (LASIK or PRK).\n• Regular eye exams to track vision changes.\n• Eyewear options for more comfort."
+                android:textSize="14sp"
+                android:textColor="#4A4A4A"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginBottom="12dp" />
 
             <TextView
                 android:id="@+id/farsightedTipsTitle"
@@ -65,33 +128,112 @@
                 android:textColor="#0288D1"
                 android:layout_marginBottom="8dp" />
 
-            <TextView
-                android:id="@+id/farsightedTipsDetails"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="• Regular eye checkups.\n• Wear prescribed glasses or contact lenses.\n• Reduce eye strain by taking frequent breaks from screens.\n• Maintain a healthy diet rich in Vitamin A."
-                android:textSize="15sp"
-                android:textColor="#4A4A4A"
-                android:lineSpacingExtra="3dp"
-                android:layout_marginBottom="8dp" />
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="24dp">
 
-            <!-- Shortsightedness Section -->
-            <TextView
-                android:id="@+id/shortsightedTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="What is Shortsightedness?"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:textColor="#0288D1"
-                android:layout_marginBottom="8dp" />
+                <TextView
+                    android:id="@+id/farsightedTipsDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Regular eye checkups.\n• Wear prescribed glasses.\n• Reduce eye strain by taking frequent breaks from screens.\n• Maintain a diet rich in Vitamin A.\n• Use artificial tears to avoid dry eyes.\n• Proper lighting when reading."
+                    android:textSize="15sp"
+                    android:textColor="#4A4A4A"
+                    android:lineSpacingExtra="3dp"
+                    android:layout_marginBottom="12dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Shortsightedness Section -->
+        <TextView
+            android:id="@+id/shortsightedTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="What is Shortsightedness?"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#0288D1"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
 
             <TextView
                 android:id="@+id/shortsightedDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Shortsightedness, or myopia, is when close objects appear clear, but distant objects look blurry. It is caused by an elongated eyeball or excessive curvature of the cornea, which focuses light in front of the retina instead of directly on it. Symptoms include squinting, eye fatigue, and difficulty seeing distant objects."
+                android:text="Shortsightedness, or myopia, is when close objects appear clear, but distant objects look blurry. It is caused by an elongated eyeball or excessive curvature of the cornea."
                 android:textSize="16sp"
+                android:textColor="#4A4A4A"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/shortsightedCausesTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Causes of Shortsightedness:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#0288D1"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/shortsightedCausesDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Genetic predisposition (family history).\n• Eye shape abnormalities.\n• Prolonged close-up work or excessive screen time.\n• Poor lighting while reading."
+                android:textSize="14sp"
+                android:textColor="#4A4A4A"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/shortsightedSymptomsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Symptoms of Shortsightedness:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#0288D1"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/shortsightedSymptomsDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Difficulty seeing distant objects clearly.\n• Frequent squinting.\n• Blurry vision while driving, especially at night.\n• Eye strain during prolonged reading or close-up work."
+                android:textSize="14sp"
+                android:textColor="#4A4A4A"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/shortsightedTreatmentTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Treatment Options for Shortsightedness:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#0288D1"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/shortsightedTreatmentDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Prescription glasses or contact lenses.\n• LASIK or PRK surgery for vision correction.\n• Orthokeratology (corneal reshaping).\n• Regular eye exams to prevent worsening of the condition."
+                android:textSize="14sp"
                 android:textColor="#4A4A4A"
                 android:lineSpacingExtra="3dp"
                 android:layout_marginBottom="12dp" />
@@ -101,20 +243,61 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tips for Managing Shortsightedness:"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:textStyle="bold"
                 android:textColor="#0288D1"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginBottom="8dp" />
 
-            <TextView
-                android:id="@+id/shortsightedTipsDetails"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:lineSpacingExtra="3dp"
-                android:text="• Use prescribed glasses or contact lenses.\n• Limit screen time and ensure proper lighting.\n• Engage in outdoor activities to reduce eye strain.\n• Consider corrective procedures like LASIK for severe cases."
-                android:textColor="#4A4A4A"
-                android:textSize="16sp" />
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/shortsightedTipsDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Use prescribed glasses or contact lenses.\n• Limit screen time.\n• Engage in outdoor activities for eye relaxation.\n• Regular eye exams.\n• Consider LASIK for severe cases."
+                    android:textSize="15sp"
+                    android:textColor="#4A4A4A"
+                    android:lineSpacingExtra="3dp" />
+
+            </LinearLayout>
+
         </LinearLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- General Eye Care Section -->
+        <TextView
+            android:id="@+id/generalEyeCareTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="General Eye Care Tips"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#0288D1"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="16dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/generalEyeCareDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Protect your eyes from UV rays by wearing sunglasses.\n• Maintain a balanced diet rich in leafy greens, carrots, and fish.\n• Stay hydrated to prevent dry eyes.\n• Get adequate sleep to support eye health.\n• Exercise regularly to improve circulation, including to the eyes."
+                android:textSize="15sp"
+                android:textColor="#4A4A4A"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginBottom="12dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

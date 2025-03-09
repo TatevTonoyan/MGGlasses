@@ -5,5 +5,15 @@
     <color name="pink">#A06FA9</color>
     <color name="light">#88847287</color>
     <color name="prof">#FCD6C8D9</color>
+    <color name="plus">#FCF3DEF8</color>
+    <color name="purple">#3C1D73</color>
+    <color name="putik">#DB7598</color>
+    <color name="back">#E6B1EF</color>
+    <color name="blue">#3F51B5</color>
+    <color name="marm">#F4F3EE</color>
+    <color name="lbu">#84C6E4</color>
+    <color name="pulink">#2E273A</color>
+        <color name="lightBeige">#F5F5DC</color> <!-- Light Beige -->
+        <color name="cream">#FFF8E1</color> <!-- Cream -->
 
-</resources>
+    </resources>

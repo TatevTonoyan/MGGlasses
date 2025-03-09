@@ -1,7 +1,7 @@
 package com.example.firstactivity;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,9 +9,13 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import android.Manifest;
+import android.content.pm.PackageManager;
 
 import java.util.List;
 
@@ -20,13 +24,19 @@ public class CameraActivity extends AppCompatActivity {
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 1;
     private Camera mCamera;
     private SurfaceView mSurfaceView;
+    private int eyePrescription = 0;
+    private int cameraId = Camera.CameraInfo.CAMERA_FACING_BACK;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_camera); // Ensure this is the correct layout
+        setContentView(R.layout.activity_camera);
 
-        // Check for Camera permission
+        // Retrieve the eye prescription data passed from QuizActivity
+        if (getIntent().hasExtra("eye_prescription")) {
+            eyePrescription = getIntent().getIntExtra("eye_prescription", 0); // Default to 0 if no data
+        }
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA},
@@ -34,10 +44,56 @@ public class CameraActivity extends AppCompatActivity {
         } else {
             initializeCamera();
         }
+
+        // After initializing the camera, ask for zoom preference
+        askForZoomPreference();
+    }
+
+    // Method to ask the user for zoom preference (near or far)
+    public void askForZoomPreference() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Zoom Preference")
+                .setMessage("Do you want to see near or far?")
+                .setPositiveButton("Near", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Adjust zoom for near
+                        setEyePrescription(10);  // Higher zoom level for near view
+                    }
+                })
+                .setNegativeButton("Far", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Adjust zoom for far
+                        setEyePrescription(-5);  // Lower zoom level for far view
+                    }
+                })
+                .create()
+                .show();
+    }
+
+    public void setEyePrescription(int prescription) {
+        this.eyePrescription = prescription;
+        adjustCameraZoom();
+    }
+
+    // Adjust the camera zoom based on the eye prescription
+    private void adjustCameraZoom() {
+        if (mCamera == null) return;
+        Camera.Parameters parameters = mCamera.getParameters();
+
+        if (parameters.isZoomSupported()) {
+            int maxZoom = parameters.getMaxZoom();
+            int zoomLevel = (int) ((eyePrescription + 5) * (maxZoom / 10.0));
+            zoomLevel = Math.max(0, Math.min(zoomLevel, maxZoom));
+            parameters.setZoom(zoomLevel);
+            mCamera.setParameters(parameters);
+            Log.i("CameraZoom", "Zoom adjusted to level: " + zoomLevel);
+        } else {
+            Log.i("CameraZoom", "Zoom not supported on this device");
+        }
     }
 
     private void initializeCamera() {
-        mSurfaceView = findViewById(R.id.surfaceView); // Ensure this is the correct reference
+        mSurfaceView = findViewById(R.id.surfaceView);
         mCamera = getCameraInstance();
 
         if (mCamera == null) {
@@ -45,16 +101,15 @@ public class CameraActivity extends AppCompatActivity {
             return;
         }
 
-        // Set up SurfaceView for preview
         SurfaceHolder holder = mSurfaceView.getHolder();
         holder.addCallback(new SurfaceHolder.Callback() {
             @Override
             public void surfaceCreated(SurfaceHolder holder) {
                 try {
-                    // Set the camera preview display and start the preview
                     mCamera.setPreviewDisplay(holder);
-                    setCameraResolution(); // Set camera resolution without zooming in
+                    setCameraResolution();
                     mCamera.startPreview();
+                    adjustCameraZoom();
                 } catch (Exception e) {
                     Log.e("CameraError", "Error setting up camera preview: " + e.getMessage());
                 }
@@ -65,8 +120,9 @@ public class CameraActivity extends AppCompatActivity {
                 try {
                     mCamera.stopPreview();
                     mCamera.setPreviewDisplay(holder);
-                    setCameraResolution(); // Set camera resolution again when surface changes
+                    setCameraResolution();
                     mCamera.startPreview();
+                    adjustCameraZoom();
                 } catch (Exception e) {
                     Log.e("CameraError", "Error restarting camera preview: " + e.getMessage());
                 }
@@ -79,10 +135,10 @@ public class CameraActivity extends AppCompatActivity {
         });
     }
 
-    private static Camera getCameraInstance() {
+    private Camera getCameraInstance() {
         Camera camera = null;
         try {
-            camera = Camera.open(); // Try to open the default camera
+            camera = Camera.open(cameraId);
         } catch (Exception e) {
             Log.e("CameraError", "Camera is not available: " + e.getMessage());
         }
@@ -91,52 +147,32 @@ public class CameraActivity extends AppCompatActivity {
 
     private void setCameraResolution() {
         Camera.Parameters parameters = mCamera.getParameters();
+        List<Camera.Size> supportedSizes = parameters.getSupportedPictureSizes();
+        Camera.Size bestSize = supportedSizes.get(0);
 
-        // Get supported preview sizes and find the highest resolution
-        List<Camera.Size> supportedPreviewSizes = parameters.getSupportedPreviewSizes();
-        Camera.Size bestPreviewSize = supportedPreviewSizes.get(0);
-
-        for (Camera.Size size : supportedPreviewSizes) {
-            if (size.width * size.height > bestPreviewSize.width * bestPreviewSize.height) {
-                bestPreviewSize = size;
+        for (Camera.Size size : supportedSizes) {
+            if (size.width * size.height > bestSize.width * bestSize.height) {
+                bestSize = size;
             }
         }
+        parameters.setPictureSize(bestSize.width, bestSize.height);
+        parameters.setJpegQuality(100);
 
-        // Set the best preview size
-        parameters.setPreviewSize(bestPreviewSize.width, bestPreviewSize.height);
-
-        // Get supported picture sizes and set the highest resolution for photos
-        List<Camera.Size> supportedPictureSizes = parameters.getSupportedPictureSizes();
-        Camera.Size bestPictureSize = supportedPictureSizes.get(0);
-
-        for (Camera.Size size : supportedPictureSizes) {
-            if (size.width * size.height > bestPictureSize.width * bestPictureSize.height) {
-                bestPictureSize = size;
-            }
+        if (parameters.isVideoStabilizationSupported()) {
+            parameters.setVideoStabilization(true);
         }
-
-        // Set the picture size (for capturing photos)
-        parameters.setPictureSize(bestPictureSize.width, bestPictureSize.height);
-
-        // We are NOT setting zoom here to keep the normal/far view
-        // Just use default settings for normal distance
+        if (parameters.isAutoExposureLockSupported()) {
+            parameters.setAutoExposureLock(false);
+        }
 
         mCamera.setParameters(parameters);
-
-        // Set the camera display orientation to 90 degrees (portrait mode)
         setCameraDisplayOrientation(90);
-
-        Log.i("CameraInfo", "Preview size set to: " + bestPreviewSize.width + "x" + bestPreviewSize.height);
-        Log.i("CameraInfo", "Picture size set to: " + bestPictureSize.width + "x" + bestPictureSize.height);
     }
 
     private void setCameraDisplayOrientation(int rotation) {
         Camera.CameraInfo info = new Camera.CameraInfo();
-        Camera.getCameraInfo(Camera.CameraInfo.CAMERA_FACING_BACK, info);
-
-        // Get the current display rotation
-        int degrees = rotation; // We want to set 90 degrees for portrait mode
-
+        Camera.getCameraInfo(cameraId, info);
+        int degrees = rotation;
         int result = (info.orientation - degrees + 360) % 360;
         mCamera.setDisplayOrientation(result);
     }
@@ -158,7 +194,6 @@ public class CameraActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
         if (requestCode == CAMERA_PERMISSION_REQUEST_CODE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 initializeCamera();

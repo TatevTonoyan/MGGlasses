@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/marm"
+    android:padding="9dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EyeGlasses recommendation"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="@color/putik"
+        android:layout_marginBottom="10dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How would you describe your jawline?"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/putik" />
+
+    <RadioGroup
+        android:id="@+id/jawline_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/jawline_option1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Strong Jawline"
+            android:textColor="@color/black"
+            android:textSize="16dp"/>
+
+        <RadioButton
+            android:id="@+id/jawline_option2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Soft Jawline"
+            android:textSize="16dp"/>
+
+        <RadioButton
+            android:id="@+id/jawline_option3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pointed Jawline"
+            android:textColor="@color/black"
+            android:textSize="16dp"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What is your face shape?"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/putik" />
+
+    <RadioGroup
+        android:id="@+id/face_shape_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/round_face"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:text="Round" />
+
+        <RadioButton
+            android:id="@+id/oval_face"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:text="Oval" />
+
+        <RadioButton
+            android:id="@+id/square_face"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:text="Square" />
+
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="340dp"
+        android:layout_marginStart="27dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/putik"
+        android:text="My Glasses Recommendation"
+        android:textColor="@color/white"
+        android:textSize="16dp" />
+
+    <ImageView
+        android:id="@+id/image_pinkglasses"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/pinkglass" />
+
+
+</LinearLayout>

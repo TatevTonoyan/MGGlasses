@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Cover Image Section -->
+        <ImageView
+            android:id="@+id/image_cover"
+            android:layout_width="390dp"
+            android:layout_height="350dp"
+            app:srcCompat="@drawable/shapespng"
+            android:layout_gravity="center"/>
+
+        <!-- Result Text Section -->
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:text="Your recommended glasses will appear here."
+            android:textColor="@color/putik"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+
+        <!-- Back to Profile Button -->
+
+        <!-- Image Sections -->
+
+        <Button
+            android:id="@+id/btn_back_to_profile"
+            android:layout_width="184dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="100dp"
+            android:backgroundTint="@color/putik"
+            android:text="Back to Profile"
+            android:textColor="@color/purple" />
+
+        <ImageView
+            android:id="@+id/image_women"
+            android:layout_width="390dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/women"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:id="@+id/image_most"
+            android:layout_width="390dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/most"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:id="@+id/image_facees"
+            android:layout_width="390dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/facees"
+            android:layout_gravity="center"/>
+
+        <!-- Information Section -->
+        <TextView
+            android:id="@+id/tv_face_shapes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Face Shapes and Recommended Eyeglass Types"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/putik"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"/>
+
+        <!-- Description about Face Shapes -->
+        <TextView
+            android:id="@+id/tv_face_shapes_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="There are various face shapes, and different eyeglass types complement each shape. Here are some of the common face shapes and the recommended eyeglass types:"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+
+        <!-- Face Shape Descriptions -->
+        <TextView
+            android:id="@+id/tv_oval_shape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Oval Face Shape: Oval faces are balanced and versatile. Almost any frame shape works well, but rectangular or square frames provide a nice contrast."
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_round_shape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Round Face Shape: Round faces can look great with angular or square frames to add definition and contrast."
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_square_shape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Square Face Shape: Oval or round frames help soften the strong angles of a square face. These frames help create balance."
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_heart_shape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Heart-Shaped Face: Try frames that are wider at the bottom, such as cat-eye or rounded frames, to balance the narrow chin."
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_diamond_shape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Diamond Face Shape: Oval and rimless frames work well with diamond-shaped faces, balancing the angles and highlighting the cheekbones."
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+
+        <!-- Eyeglass Types Information -->
+        <TextView
+            android:id="@+id/tv_eyeglass_types"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eyeglass Types"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/putik"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_eyeglass_types_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Here are some popular types of eyeglasses to consider for your face shape:"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_round_eyeglasses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Round Eyeglasses: A classic design that works well with square and angular face shapes."
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_cat_eye_eyeglasses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Cat-Eye Eyeglasses: Popular for heart-shaped faces, offering a retro vibe and bringing attention to the eyes."
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_rectangular_eyeglasses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Rectangular Eyeglasses: Works well with round faces to add structure and balance."
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_aviator_eyeglasses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Aviator Eyeglasses: Best for oval face shapes, offering a trendy and stylish look."
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UserProfileActivity"
-    android:background="@color/prof">
+    android:background="@color/plus">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,98 +16,47 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:title="User Profile"
-            android:background="?android:attr/colorPrimary" />
+            android:title="MGlasses"
+            color="?android:color/black"
+            android:background="@color/marm" />
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:background="#5CC09F">
+            android:layout_height="250dp">
 
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:id="@+id/profile"
                 android:layout_centerInParent="true"
-                android:background="@drawable/profile"/>
+                android:background="@drawable/logo"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/welcome"
-                android:text="Welcome, User!"
+                android:text="MGGlasses!"
                 android:layout_below="@+id/profile"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@color/white"/>
+                android:textColor="@color/putik"
+                android:textStyle="bold"
+                android:textSize="29dp"/>
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="15dp"
-            android:layout_marginTop="15dp"
-            android:background="@color/white">
+            android:padding="15dp">
 
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:id="@+id/ic_profile"
-                android:background="@drawable/username"/>
-
-            <TextView
-                android:id="@+id/tx_fullname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/ic_profile"
-                android:layout_marginStart="50dp"
-                android:text="Full Name is verified."
-                android:textSize="18sp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="20dp"
-                android:layout_below="@+id/tx_fullname"
-                android:id="@+id/divider_name"
-                android:background="@color/prof"/>
-
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:id="@+id/ic_email"
-                android:background="@drawable/mail"
-                android:layout_below="@+id/divider_name"
-                android:layout_marginTop="20dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tx_mail"
-                android:layout_alignStart="@+id/ic_email"
-                android:layout_below="@+id/divider_name"
-                android:text="Email is verified."
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="20dp"
-                android:textSize="18sp"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="20dp"
-                android:layout_below="@+id/tx_fullname"
-                android:background="@color/prof"
-                android:id="@+id/divider_email"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tx_text"
-                android:layout_alignStart="@+id/ic_email"
-                android:layout_below="@+id/tx_mail"
-                android:textColor="@color/pink"
+                android:textColor="@color/black"
                 android:text="What You’ll Find Here:
 👓 Eye Health Tips: Discover practical advice to protect your vision and prevent common issues like digital eye strain, dryness, and fatigue.
 👁️ Vision Exercises: Strengthen and relax your eyes with guided exercises tailored to your lifestyle.
@@ -116,18 +64,42 @@ Your Vision is Precious. Let’s Protect It Together. 💙
 Start your journey now. Let’s make eye care simple, effective, and a part of your everyday life."
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="35dp"
-                android:textSize="15sp"/>
+                android:textSize="18sp"/>
 
             <ProgressBar
+                android:id="@+id/tx_progressBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tx_progressBar"
                 style="?android:attr/progressBarStyleLarge"
-                android:layout_below="@+id/divider_email"
-                android:layout_centerVertical="true"
+                android:visibility="gone"
                 android:layout_centerHorizontal="true"
-                android:elevation="10dp"
-                android:visibility="gone"/>
+                android:layout_centerVertical="true" />
+
+
+
+            <Button
+                android:id="@+id/btn_eye_exercises"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tx_text"
+                android:layout_marginTop="15dp"
+                android:text="Eye Exercises"
+                android:backgroundTint="@color/putik"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
+
+
+
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_eye_exercises"
+                android:layout_marginTop="15dp"
+                android:text="Log Out"
+                android:backgroundTint="@color/putik"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
 
         </RelativeLayout>
 

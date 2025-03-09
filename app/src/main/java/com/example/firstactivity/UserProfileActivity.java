@@ -1,11 +1,12 @@
 package com.example.firstactivity;
 
 import android.content.Intent;
-import com.example.firstactivity.R;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -27,6 +28,7 @@ public class UserProfileActivity extends AppCompatActivity {
     private TextView textViewWelcome, textViewEmail, textViewFullName;
     private ProgressBar progressBar;
     private ImageView imageView;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,23 +37,34 @@ public class UserProfileActivity extends AppCompatActivity {
 
         // Set up the toolbar as the action bar
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);  // This sets the toolbar as the app's action bar
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);  // Add a back button
 
-        // Optional: Add a back button to the toolbar
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
 
         // Initialize views
         textViewWelcome = findViewById(R.id.welcome);
-        textViewEmail = findViewById(R.id.tx_mail);
-        textViewFullName = findViewById(R.id.tx_fullname);
+
         progressBar = findViewById(R.id.tx_progressBar);
         imageView = findViewById(R.id.profile);
 
+        Button btnEyeExercises = findViewById(R.id.btn_eye_exercises);
+        Button btnLogout = findViewById(R.id.btn_logout);
+
+        btnEyeExercises.setOnClickListener(v -> {
+            Intent intent = new Intent(UserProfileActivity.this, EyeExercisesActivity.class);
+            startActivity(intent);
+        });
+
+
+        btnLogout.setOnClickListener(v -> logoutUser());  // Call the logout function
+
         // Get the current user
-        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
 
         if (firebaseUser != null) {
-            progressBar.setVisibility(View.VISIBLE);  // Show loading indicator
+            progressBar.setVisibility(View.VISIBLE);
             showUserProfile(firebaseUser);  // Show the user's profile details
         } else {
             Toast.makeText(UserProfileActivity.this, "No user is logged in", Toast.LENGTH_SHORT).show();
@@ -60,7 +73,6 @@ public class UserProfileActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu
         getMenuInflater().inflate(R.menu.common_menu, menu);
         return true;
     }
@@ -70,46 +82,63 @@ public class UserProfileActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.quiz_m) {
-            // Navigate to QuizActivity
             startActivity(new Intent(UserProfileActivity.this, QuizActivity.class));
-
         } else if (id == R.id.camera_m) {
-            // Navigate to CameraActivity
             startActivity(new Intent(UserProfileActivity.this, CameraActivity.class));
-        } else if (id == R.id.advices_m) {
-            // Navigate to AdvicesActivity
+        }
+        else if (id == R.id.glass_type_m) {
+            startActivity(new Intent(UserProfileActivity.this, FaceShapeActivity.class));
+        }else if (id == R.id.advices_m) {
             startActivity(new Intent(UserProfileActivity.this, AdvicesActivity.class));
-
-        } else {
+        }
+        else if (id == R.id.vitamine_m) {
+            startActivity(new Intent(UserProfileActivity.this, VisionQuizActivity.class));
+        }else if (id == R.id.glass_type_m) {
+            startActivity(new Intent(UserProfileActivity.this, FaceShapeActivity.class));
+        }else {
             return super.onOptionsItemSelected(item);
         }
         return true;
     }
 
     private void showUserProfile(FirebaseUser firebaseUser) {
-        String userID = firebaseUser.getUid();  // Get the current user's ID
+        String userID = firebaseUser.getUid();
         DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Register users");
 
-        // Access the user's data from Firebase using the user ID
         referenceProfile.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                // Retrieve the user details from the snapshot
                 ReadwriteDetails userDetails = snapshot.getValue(ReadwriteDetails.class);
                 if (userDetails != null) {
-                    // Set the profile details into the views
                     textViewWelcome.setText("Welcome " + userDetails.Username + "!");
                     textViewFullName.setText("Full Name: " + userDetails.Username);
                     textViewEmail.setText("Email: " + userDetails.Email);
                 }
-                progressBar.setVisibility(View.GONE);  // Hide loading indicator after data is loaded
+                progressBar.setVisibility(View.GONE);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                progressBar.setVisibility(View.GONE);  // Hide loading indicator if there's an error
+                progressBar.setVisibility(View.GONE);
                 Toast.makeText(UserProfileActivity.this, "Failed to load user profile", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void logoutUser() {
+        // Sign out from Firebase
+        mAuth.signOut();
+
+        // Clear user session (if using SharedPreferences)
+        SharedPreferences preferences = getSharedPreferences("user_session", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear();
+        editor.apply();
+
+        // Redirect to LoginActivity
+        Intent intent = new Intent(UserProfileActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 }

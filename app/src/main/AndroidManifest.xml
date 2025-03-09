@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- Add permissions for Camera -->
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera" android:required="true" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +20,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstActivity"
         tools:targetApi="31">
+        <activity
+            android:name=".GlassesRecommendationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FaceShapeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".QuizResultsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VisionQuizActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EyeExercisesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".YouTubePlayer"
+            android:exported="false" /> <!-- Main entry activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- Other activities -->
         <activity
             android:name=".AdvicesActivity"
             android:exported="false" />
@@ -35,14 +65,6 @@
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

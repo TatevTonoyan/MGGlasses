@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <item android:title="Quize"
+    <item android:title="Information"
         android:id="@+id/quiz_m"
         />
     <item android:title="Camera"
@@ -11,6 +11,12 @@
         />
     <item android:title="Advices"
         android:id="@+id/advices_m"
+        />
+    <item android:title="Vitamine"
+        android:id="@+id/vitamine_m"
+        />
+    <item android:title="Glasse type"
+        android:id="@+id/glass_type_m"
         />
 
 </menu>

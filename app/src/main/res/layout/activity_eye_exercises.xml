@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/marm">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="30dp">
+
+        <!-- Title Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50dp"
+            android:text="Eye Exercises Tips"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:textColor="@color/putik"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Eye Exercise Tips Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔹 20-20-20 Rule: Every 20 minutes, look at something 20 feet away for 20 seconds.\n\n🔹 Blink Frequently: Prevent dry eyes by blinking more.\n\n🔹 Palming: Rub your hands together and place them over your eyes for relaxation."
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- YouTube Video Section 1 -->
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/youtube_player1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center"/>
+
+        <!-- YouTube Video Section 2 -->
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/youtube_player2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center"/>
+
+        <!-- YouTube Links Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Link: https://www.youtube.com/watch?v=iVb4vUp70zY"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Link: https://www.youtube.com/watch?v=UicwXt3jHvE"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Link: https://www.youtube.com/watch?v=J6Fz8UqU1vI"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4. Link: https://www.youtube.com/watch?v=SuDb0jmIHK4"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="15dp"/>
+
+        <!-- Back Button Section -->
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back to Profile"
+            android:backgroundTint="@color/putik"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+</ScrollView>
