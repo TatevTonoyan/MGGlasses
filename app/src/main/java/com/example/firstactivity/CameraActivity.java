@@ -1,7 +1,6 @@
 package com.example.firstactivity;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.util.Log;

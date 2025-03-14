@@ -1,108 +1,116 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UserProfileActivity"
-    android:background="@color/plus">
+    android:background="@color/cream">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:title="MGlasses"
-            color="?android:color/black"
-            android:background="@color/marm" />
+            app:titleTextColor="@color/pulink"
+            android:background="@color/white" />
 
-        <RelativeLayout
+        <!-- Profile Picture -->
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="325dp"
+            android:layout_height="210dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="20dp"/>
+
+        <!-- Welcome Text -->
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="MGGlasses!"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/lbu"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <!-- Notes Section -->
+        <EditText
+            android:id="@+id/et_notes"
             android:layout_width="match_parent"
-            android:layout_height="250dp">
+            android:layout_height="150dp"
+            android:hint="Write your notes here..."
+            android:padding="10dp"
+            android:background="@android:color/white"
+            android:textColor="@color/pulink"
+            android:textSize="16sp"
+            android:gravity="top"
+            android:layout_marginTop="9dp"
+            android:inputType="textMultiLine"
+            android:layout_margin="10dp"/>
 
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:id="@+id/profile"
-                android:layout_centerInParent="true"
-                android:background="@drawable/logo"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/welcome"
-                android:text="MGGlasses!"
-                android:layout_below="@+id/profile"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@color/putik"
-                android:textStyle="bold"
-                android:textSize="29dp"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
+        <!-- Calendar -->
+        <CalendarView
+            android:id="@+id/calendarView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="15dp">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tx_text"
-                android:textColor="@color/black"
-                android:text="What You’ll Find Here:
-👓 Eye Health Tips: Discover practical advice to protect your vision and prevent common issues like digital eye strain, dryness, and fatigue.
-👁️ Vision Exercises: Strengthen and relax your eyes with guided exercises tailored to your lifestyle.
-Your Vision is Precious. Let’s Protect It Together. 💙
-Start your journey now. Let’s make eye care simple, effective, and a part of your everyday life."
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="35dp"
-                android:textSize="18sp"/>
-
-            <ProgressBar
-                android:id="@+id/tx_progressBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="?android:attr/progressBarStyleLarge"
-                android:visibility="gone"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true" />
+            android:layout_height="wrap_content"
+            android:background="@color/light"
+            android:dateTextAppearance="?android:attr/textAppearanceMedium"
+            android:layout_margin="10dp" />
 
 
 
-            <Button
-                android:id="@+id/btn_eye_exercises"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tx_text"
-                android:layout_marginTop="15dp"
-                android:text="Eye Exercises"
-                android:backgroundTint="@color/putik"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"/>
 
+        <TextView
+            android:id="@+id/tv_selected_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selected Date: None"
+            android:textSize="16sp"
+            android:textColor="@color/pulink"
+            android:textStyle="italic"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"/>
 
+        <!-- Progress Bar -->
+        <ProgressBar
+            android:id="@+id/tx_progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleLarge"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp" />
 
-            <Button
-                android:id="@+id/btn_logout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/btn_eye_exercises"
-                android:layout_marginTop="15dp"
-                android:text="Log Out"
-                android:backgroundTint="@color/putik"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"/>
+        <!-- Buttons -->
+        <Button
+            android:id="@+id/btn_eye_exercises"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Eye Exercises"
+            android:backgroundTint="@color/black"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_margin="10dp" />
 
-        </RelativeLayout>
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Log Out"
+            android:backgroundTint="@color/black"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_margin="10dp" />
 
     </LinearLayout>
-
 </ScrollView>

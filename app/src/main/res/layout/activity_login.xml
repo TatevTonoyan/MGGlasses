@@ -14,13 +14,14 @@
         android:layout_margin="15dp"
        >
 
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/Head_login"
             android:layout_marginTop="20dp"
             android:textSize="40dp"
-            android:text="Enter your login information."
+            android:text="Enter your Login information."
             android:textStyle=""
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
