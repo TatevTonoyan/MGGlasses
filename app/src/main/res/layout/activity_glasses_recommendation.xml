@@ -11,15 +11,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Cover Image Section -->
         <ImageView
             android:id="@+id/image_cover"
-            android:layout_width="390dp"
+            android:layout_width="match_parent"
             android:layout_height="350dp"
             app:srcCompat="@drawable/shapespng"
             android:layout_gravity="center"/>
 
-        <!-- Result Text Section -->
         <TextView
             android:id="@+id/tv_result"
             android:layout_width="wrap_content"
@@ -33,18 +31,16 @@
             android:layout_marginBottom="10dp"
             android:layout_gravity="center"/>
 
-        <!-- Back to Profile Button -->
 
-        <!-- Image Sections -->
 
         <Button
             android:id="@+id/btn_back_to_profile"
             android:layout_width="184dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="100dp"
             android:backgroundTint="@color/putik"
             android:text="Back to Profile"
+            android:textSize="15dp"
             android:textColor="@color/purple" />
 
         <ImageView
@@ -57,7 +53,7 @@
 
         <ImageView
             android:id="@+id/image_most"
-            android:layout_width="390dp"
+            android:layout_width="match_parent"
             android:layout_height="240dp"
             android:layout_marginTop="10dp"
             app:srcCompat="@drawable/most"
@@ -83,7 +79,6 @@
             android:layout_marginTop="20dp"
             android:layout_gravity="center"/>
 
-        <!-- Description about Face Shapes -->
         <TextView
             android:id="@+id/tv_face_shapes_description"
             android:layout_width="wrap_content"
@@ -95,7 +90,6 @@
             android:layout_marginBottom="10dp"
             android:layout_gravity="center"/>
 
-        <!-- Face Shape Descriptions -->
         <TextView
             android:id="@+id/tv_oval_shape"
             android:layout_width="wrap_content"
@@ -146,7 +140,7 @@
             android:layout_marginBottom="10dp"
             android:layout_gravity="center"/>
 
-        <!-- Eyeglass Types Information -->
+
         <TextView
             android:id="@+id/tv_eyeglass_types"
             android:layout_width="wrap_content"

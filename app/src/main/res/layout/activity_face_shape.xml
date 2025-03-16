@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="How would you describe your jawline?"
-        android:textSize="21sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:layout_marginTop="10dp"
         android:textColor="@color/putik" />
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:text="Strong Jawline"
             android:textColor="@color/black"
-            android:textSize="16dp"/>
+            android:textSize="18dp"/>
 
         <RadioButton
             android:id="@+id/jawline_option2"
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:text="Soft Jawline"
-            android:textSize="16dp"/>
+            android:textSize="18dp"/>
 
         <RadioButton
             android:id="@+id/jawline_option3"
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:text="Pointed Jawline"
             android:textColor="@color/black"
-            android:textSize="16dp"/>
+            android:textSize="18dp"/>
 
     </RadioGroup>
 
@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:text="What is your face shape?"
         android:layout_marginTop="8dp"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@color/putik" />
 
@@ -96,25 +96,27 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:textSize="16dp"
-            android:text="Square" />
+            android:text="Square"
+            android:layout_marginBottom="10dp"
+            />
 
 
     </RadioGroup>
 
     <Button
         android:id="@+id/btn_submit"
-        android:layout_width="340dp"
-        android:layout_marginStart="27dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/putik"
         android:text="My Glasses Recommendation"
         android:textColor="@color/white"
+        android:layout_gravity="center"
         android:textSize="16dp" />
 
     <ImageView
         android:id="@+id/image_pinkglasses"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginTop="10dp"
         app:srcCompat="@drawable/pinkglass" />
 

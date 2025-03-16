@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="20dp"
+    android:padding="16dp"
     android:background="@color/marm">
 
     <!-- Title Text -->
@@ -13,10 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Write your perimeters"
-        android:textSize="35sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:textColor="@color/pulink"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
         android:layout_gravity="center"/>
 
     <!-- First Question -->
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Do you have any visual impairment?"
-        android:textSize="23sp"
+        android:textSize="29sp"
         android:textColor="@color/putik"
         android:textStyle="bold"
         android:layout_marginBottom="10dp"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:text="Farsighted (+)"
             android:textSize="18sp"
-            android:padding="10dp"
+            android:padding="8dp"
             android:textColor="@color/black"
             android:buttonTint="@color/purple" />
 
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:text="Short-sighted (-)"
             android:textSize="18sp"
-            android:padding="10dp"
+            android:padding="8dp"
             android:textColor="@color/black"
             android:buttonTint="@color/purple" />
     </RadioGroup>
@@ -69,12 +69,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Please enter the difference."
-        android:textSize="25sp"
+        android:textSize="29sp"
         android:textColor="@color/putik"
         android:layout_marginTop="20dp"
         android:textStyle="bold"
-        android:layout_marginBottom="10dp"
-      />
+        android:layout_marginBottom="10dp"/>
 
     <!-- EditText for Numeric Input -->
     <EditText
@@ -86,38 +85,39 @@
         android:textColorHint="@color/light"
         android:textColor="@color/black"
         android:maxLength="10"
-        android:textSize="20sp"
+        android:textSize="19sp"
         android:padding="12dp"
         android:layout_marginBottom="20dp" />
 
     <!-- Submit Button -->
     <Button
         android:id="@+id/submit_button"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/pulink"
         android:text="Go to Camera"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:layout_gravity="center"/>
 
     <!-- Result Text (Initially hidden) -->
+
+    <!-- Image of Glasses (or any other image you prefer) -->
     <TextView
         android:id="@+id/resultText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Thank you for your answer!"
-        android:textSize="16sp"
-        android:textColor="@color/white"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:visibility="gone"
-        android:layout_gravity="center"/>
+        android:text="Thank you for your answer!"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:visibility="gone" />
 
-    <!-- Image of Glasses (or any other image you prefer) -->
     <ImageView
-        android:layout_width="403dp"
-        android:layout_height="230dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         app:srcCompat="@drawable/glasses"
         android:layout_gravity="center"/>

@@ -22,7 +22,7 @@
             android:layout_marginTop="20dp"
             android:textSize="40dp"
             android:text="Enter your Login information."
-            android:textStyle=""
+            android:textColor="@color/black"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
 
@@ -46,7 +46,9 @@
             android:hint="Enter your email"
             android:inputType="textEmailAddress"
             android:textSize="16sp"
+            android:textColorHint="@color/light"
             android:padding="10dp"
+            android:textColor="@color/black"
             android:layout_below="@+id/log_email"
             android:background="@drawable/border"/>
 
@@ -77,6 +79,8 @@
             android:inputType="textEmailAddress"
             android:textSize="16sp"
             android:padding="10dp"
+            android:textColorHint="@color/light"
+            android:textColor="@color/black"
             android:layout_below="@+id/log_password"
             android:background="@drawable/border"
             />

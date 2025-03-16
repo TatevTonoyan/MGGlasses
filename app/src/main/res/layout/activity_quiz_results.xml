@@ -9,9 +9,10 @@
 
     <ImageView
         android:id="@+id/image_vegetable"
-        android:layout_marginTop="5dp"
-        android:layout_width="380dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:layout_marginBottom="10dp"
         app:srcCompat="@drawable/vegetable"/>
 
     <TextView
@@ -19,10 +20,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="20dp"
-        android:layout_marginStart="50dp"
+        android:layout_gravity="center"
         android:text="Your result will be here!"
         android:textColor="@color/putik"
-        android:textSize="25sp"
+        android:textSize="26sp"
         android:textStyle="bold" />
 
     <Button
@@ -31,13 +32,13 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/putik"
         android:text="Back to Profile"
-        android:textSize="17dp"
-        android:layout_marginStart="50dp"
+        android:textSize="18dp"
+        android:layout_gravity="center"
         android:textColor="@color/purple" />
     <ImageView
         android:id="@+id/image_pill"
         android:layout_marginTop="5dp"
-        android:layout_width="380dp"
+        android:layout_width="match_parent"
         android:layout_height="300dp"
         app:srcCompat="@drawable/pill"/>
 </LinearLayout>

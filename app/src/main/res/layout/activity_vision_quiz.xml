@@ -1,97 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/white"
-    android:padding="10dp">
+    android:fillViewport="true">
 
-    <ImageView
-        android:id="@+id/image_quiz"
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_below="@+id/Head_login"
-        app:srcCompat="@drawable/quiz"/>
-
-    <TextView
-        android:id="@+id/tv_question"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="15dp"
-        android:layout_marginTop="15dp"
-        android:text="Question goes here"
-        android:gravity="center"
-        android:textSize="22sp"
-        android:textColor="@color/putik"
-        android:textStyle="bold" />
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="10dp">
 
-    <RadioGroup
-        android:id="@+id/rg_answers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        <!-- Quiz Image -->
+        <ImageView
+            android:id="@+id/image_quiz"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:srcCompat="@drawable/quiz"
+            android:scaleType="centerInside"/>
 
-        <RadioButton
-            android:id="@+id/rb_option1"
+        <!-- Question Text -->
+        <TextView
+            android:id="@+id/tv_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="Option 1"
-            android:textSize="17dp"/>
+            android:paddingBottom="15dp"
+            android:text="Question goes here"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@color/putik"
+            android:textStyle="bold" />
 
-        <RadioButton
-            android:id="@+id/rb_option2"
+        <!-- Radio Group with Options -->
+        <RadioGroup
+            android:id="@+id/rg_answers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Option 2"
-            android:textColor="@color/black"
-            android:textSize="17dp"
-            />
+            android:orientation="vertical"
+            android:layout_marginTop="0dp">
 
-        <RadioButton
-            android:id="@+id/rb_option3"
+            <RadioButton
+                android:id="@+id/rb_option1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Option 1"
+                android:textSize="20sp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginBottom="0dp" />
+
+            <RadioButton
+                android:id="@+id/rb_option2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option 2"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginBottom="0dp" />
+
+            <RadioButton
+                android:id="@+id/rb_option3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option 3"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginBottom="0dp" />
+
+            <RadioButton
+                android:id="@+id/rb_option4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option 4"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginBottom="0dp" />
+        </RadioGroup>
+
+        <!-- Next Button -->
+        <Button
+            android:id="@+id/btn_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Option 3"
-            android:textColor="@color/black"
-            android:textSize="17dp"/>
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/putik"
+            android:text="Next"
+            android:textSize="15sp"
+            android:textColor="@color/pulink" />
 
-        <RadioButton
-            android:id="@+id/rb_option4"
+        <!-- Submit Button (Initially Hidden) -->
+        <Button
+            android:id="@+id/btn_submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Option 4"
-            android:textColor="@color/black"
-            android:textSize="17dp"/>
-    </RadioGroup>
+            android:text="Get Vitamin Recommendation"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/putik"
+            android:textColor="@color/pulink"
+            android:visibility="gone"
+            android:layout_gravity="center"/>
 
-    <Button
-        android:id="@+id/btn_next"
-        android:layout_width="194dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/putik"
-        android:text="Next"
-        android:gravity="center"
-        android:textSize="17dp"
-        android:textColor="@color/pulink" />
+        <!-- Cover Image -->
+        <ImageView
+            android:id="@+id/image_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/cover"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+          />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get Vitamin Recommendation"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="@color/putik"
-        android:textColor="@color/pulink"
-        android:visibility="gone"/>
-    <ImageView
-        android:id="@+id/image_cover"
-        android:layout_marginTop="5dp"
-        android:layout_width="375dp"
-        android:layout_height="300dp"
-        app:srcCompat="@drawable/cover"/>
-
-
-
-</LinearLayout>
+</ScrollView>
