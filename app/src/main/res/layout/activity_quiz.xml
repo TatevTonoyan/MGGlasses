@@ -1,125 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@color/marm">
+    android:fillViewport="true">
 
-    <!-- Title Text -->
-    <TextView
-        android:id="@+id/Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Write your perimeters"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:textColor="@color/pulink"
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="center"/>
-
-    <!-- First Question -->
-    <TextView
-        android:id="@+id/questionText_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Do you have any visual impairment?"
-        android:textSize="29sp"
-        android:textColor="@color/putik"
-        android:textStyle="bold"
-        android:layout_marginBottom="10dp"
-        android:layout_gravity="center"/>
-
-    <!-- RadioGroup with options -->
-    <RadioGroup
-        android:id="@+id/optionsGroup"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="10dp"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp">
+        android:padding="16dp"
+        android:background="@color/marm">
 
-        <RadioButton
-            android:id="@+id/option1"
+        <!-- Title Text -->
+        <TextView
+            android:id="@+id/Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Farsighted (+)"
-            android:textSize="18sp"
-            android:padding="8dp"
-            android:textColor="@color/black"
-            android:buttonTint="@color/purple" />
+            android:text="Write your perimeters"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/pulink"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"/>
 
-        <RadioButton
-            android:id="@+id/option2"
+        <!-- First Question -->
+        <TextView
+            android:id="@+id/questionText_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Short-sighted (-)"
-            android:textSize="18sp"
-            android:padding="8dp"
+            android:text="Do you have any visual impairment?"
+            android:textSize="29sp"
+            android:textColor="@color/putik"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+
+        <!-- RadioGroup with options -->
+        <RadioGroup
+            android:id="@+id/optionsGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
+
+            <RadioButton
+                android:id="@+id/option1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Farsighted (+)"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:buttonTint="@color/purple" />
+
+            <RadioButton
+                android:id="@+id/option2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Short-sighted (-)"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:buttonTint="@color/purple" />
+        </RadioGroup>
+
+        <!-- Second Question -->
+        <TextView
+            android:id="@+id/questionText_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please enter the difference."
+            android:textSize="29sp"
+            android:textColor="@color/putik"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- EditText for Numeric Input -->
+        <EditText
+            android:id="@+id/numberInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Enter the difference"
+            android:textColorHint="@color/light"
             android:textColor="@color/black"
-            android:buttonTint="@color/purple" />
-    </RadioGroup>
+            android:maxLength="10"
+            android:textSize="19sp"
+            android:padding="12dp"
+            android:layout_marginBottom="20dp" />
 
-    <!-- Second Question -->
-    <TextView
-        android:id="@+id/questionText_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Please enter the difference."
-        android:textSize="29sp"
-        android:textColor="@color/putik"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold"
-        android:layout_marginBottom="10dp"/>
+        <!-- Third Question -->
+        <TextView
+            android:id="@+id/questionText_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Do you want to see near or far?"
+            android:textSize="29sp"
+            android:textColor="@color/putik"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
 
-    <!-- EditText for Numeric Input -->
-    <EditText
-        android:id="@+id/numberInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:hint="Enter the difference"
-        android:textColorHint="@color/light"
-        android:textColor="@color/black"
-        android:maxLength="10"
-        android:textSize="19sp"
-        android:padding="12dp"
-        android:layout_marginBottom="20dp" />
+        <!-- RadioGroup for Near/Far Vision -->
+        <RadioGroup
+            android:id="@+id/visionGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
 
-    <!-- Submit Button -->
-    <Button
-        android:id="@+id/submit_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/pulink"
-        android:text="Go to Camera"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:layout_gravity="center"/>
+            <RadioButton
+                android:id="@+id/option_near"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Near"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:buttonTint="@color/purple" />
 
-    <!-- Result Text (Initially hidden) -->
+            <RadioButton
+                android:id="@+id/option_far"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Far"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:buttonTint="@color/purple" />
+        </RadioGroup>
 
-    <!-- Image of Glasses (or any other image you prefer) -->
-    <TextView
-        android:id="@+id/resultText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="Thank you for your answer!"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:visibility="gone" />
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/pulink"
+            android:text="Go to Camera"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_gravity="center"/>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:srcCompat="@drawable/glasses"
-        android:layout_gravity="center"/>
+        <!-- Result Text (Initially hidden) -->
+        <TextView
+            android:id="@+id/resultText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Thank you for your answer!"
+            android:textColor="@color/putik"
+            android:textSize="16sp"
+            />
 
-</LinearLayout>
+        <!-- Image of Glasses -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/glasses"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+</ScrollView>

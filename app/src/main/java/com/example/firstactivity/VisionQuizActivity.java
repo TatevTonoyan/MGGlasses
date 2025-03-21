@@ -19,50 +19,36 @@ public class VisionQuizActivity extends AppCompatActivity {
     private Button btnNext, btnSubmit;
 
     private String[] questions = {
-            "What do you do when you see a blurry object?",
-            "If you had X-ray vision, what’s the first thing you’d do?",
-            "What happens when you stare at the sun?",
-            "How do you test your vision?",
-            "What does 20/20 vision mean?",
-            "What color do you see when you close your eyes?",
-            "If you see a double image, what do you assume?",
-            "How do you clean your glasses?",
-            "If your contact lens falls on the floor, what do you do?",
-            "If you wake up blind one day, what’s your first reaction?",
-            "What's the best way to prevent eye strain?",
-            "What's the worst thing for your vision?",
-            "What happens if you don't blink for 10 minutes?",
-            "What's the best way to improve your eyesight?",
-            "How do you react when someone waves at you but you can’t see who they are?"
+            "Do you experience difficulty seeing in dim light or at night?",
+            "Do your eyes feel dry, irritated, or prone to infections?",
+            "How often do you consume foods rich in Vitamin A (carrots, spinach, eggs)?",
+            "Do you experience frequent eye strain or blurry vision after screen time?",
+            "How often do you eat foods rich in Vitamin C (citrus fruits, bell peppers)?",
+            "Do you spend at least 15-30 minutes in natural sunlight daily?",
+            "How often do you include Vitamin D sources in your diet (fatty fish, dairy)?",
+            "Do your eyes feel sensitive to bright lights or glare?",
+            "How often do you eat foods rich in Vitamin E (nuts, seeds, vegetable oils)?",
+            "Do you experience slow wound healing, frequent infections, or easy bruising?"
     };
 
     private String[][] options = {
-            {"Squint aggressively", "Assume it's a ghost", "Lick your finger & wipe", "Take off your glasses"},
-            {"Find buried treasure", "Look through walls", "Check how many hotdogs you ate", "Use it to detect fake friends"},
-            {"Gain ultimate power", "Eyeballs start cooking", "Unlock hidden UV powers", "Nothing, already blind"},
-            {"Close one eye & guess", "Ask a pigeon", "Look at your hand", "Visit an eye doctor"},
-            {"It means your vision is perfect", "A magic number", "Your eyes are calibrated", "It's a conspiracy"},
-            {"Rainbow", "Complete darkness", "Weird shapes", "TV static"},
-            {"You’re seeing into another dimension", "You're a mutant", "You need glasses", "You're just dizzy"},
-            {"Lick them clean", "Breathe on them", "Use a tissue", "Run them under water"},
-            {"Blow on it & put it back", "Throw it away", "Cry a little", "Sanitize & reinsert"},
-            {"Go back to sleep", "Call 911", "Scream dramatically", "Google the symptoms"},
-            {"Blink every second", "Stare at a candle", "Wear sunglasses indoors", "Limit screen time"},
-            {"Eating carrots", "Rubbing your eyes aggressively", "Ignoring eye checkups", "Reading in the dark"},
-            {"You turn into a statue", "Your eyes dry up", "You gain superpowers", "You explode"},
-            {"Use night vision goggles", "Drink more water", "Eat 100 carrots", "Exercise your eyes"},
-            {"Wave back & hope for the best", "Ignore them", "Walk closer awkwardly", "Pretend you’re on a call"}
+            {"Very often", "Sometimes", "Rarely", "Never"},
+            {"Very often", "Sometimes", "Rarely", "Never"},
+            {"Almost never", "Rarely", "Sometimes", "Often"},
+            {"Very often", "Sometimes", "Rarely", "Never"},
+            {"Almost never", "Rarely", "Sometimes", "Often"},
+            {"Almost never", "Rarely", "Sometimes", "Every day"},
+            {"Almost never", "Rarely", "Sometimes", "Often"},
+            {"Very often", "Sometimes", "Rarely", "Never"},
+            {"Almost never", "Rarely", "Sometimes", "Often"},
+            {"Very often", "Sometimes", "Rarely", "Never"}
     };
 
-    private String[] vitaminResults = {
-            "Vitamin A - Night Vision Master",
-            "Vitamin C - Blink Reflex Extraordinaire",
-            "Vitamin D - The Sunlight Avoider",
-            "Vitamin E - The Screen Staring Champion"
-    };
-
+    private int vitaminAScore = 0;
+    private int vitaminCScore = 0;
+    private int vitaminDScore = 0;
+    private int vitaminEScore = 0;
     private int currentQuestion = 0;
-    private int vitaminScore = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +72,19 @@ public class VisionQuizActivity extends AppCompatActivity {
                 return;
             }
 
-            vitaminScore += rgAnswers.indexOfChild(findViewById(rgAnswers.getCheckedRadioButtonId()));
+            int selectedIndex = rgAnswers.indexOfChild(findViewById(rgAnswers.getCheckedRadioButtonId()));
+
+            // Assign scores based on vitamin-related questions
+            switch (currentQuestion) {
+                case 0: case 1: case 2:
+                    vitaminAScore += selectedIndex; break; // Vitamin A (Night vision, dryness)
+                case 4: case 9:
+                    vitaminCScore += selectedIndex; break; // Vitamin C (Immunity, wound healing)
+                case 5: case 6:
+                    vitaminDScore += selectedIndex; break; // Vitamin D (Sunlight, diet)
+                case 7: case 8:
+                    vitaminEScore += selectedIndex; break; // Vitamin E (Eye sensitivity, diet)
+            }
 
             currentQuestion++;
             if (currentQuestion < questions.length) {
@@ -98,9 +96,9 @@ public class VisionQuizActivity extends AppCompatActivity {
         });
 
         btnSubmit.setOnClickListener(v -> {
-            String vitamin = vitaminResults[vitaminScore % vitaminResults.length];
+            String vitaminNeeded = getVitaminResult();
             Intent intent = new Intent(VisionQuizActivity.this, QuizResultsActivity.class);
-            intent.putExtra("VITAMIN_RESULT", vitamin);
+            intent.putExtra("VITAMIN_RESULT", vitaminNeeded);
             startActivity(intent);
             finish();
         });
@@ -113,5 +111,17 @@ public class VisionQuizActivity extends AppCompatActivity {
         rbOption3.setText(options[currentQuestion][2]);
         rbOption4.setText(options[currentQuestion][3]);
         rgAnswers.clearCheck();
+    }
+
+    private String getVitaminResult() {
+        if (vitaminAScore >= vitaminCScore && vitaminAScore >= vitaminDScore && vitaminAScore >= vitaminEScore) {
+            return "Vitamin A - Essential for night vision and preventing dry eyes.";
+        } else if (vitaminCScore >= vitaminAScore && vitaminCScore >= vitaminDScore && vitaminCScore >= vitaminEScore) {
+            return "Vitamin C - Needed for eye health, reducing infections, and improving healing.";
+        } else if (vitaminDScore >= vitaminAScore && vitaminDScore >= vitaminCScore && vitaminDScore >= vitaminEScore) {
+            return "Vitamin D - Important for eye function and reducing inflammation.";
+        } else {
+            return "Vitamin E - Helps with light sensitivity and protects against oxidative damage.";
+        }
     }
 }
