@@ -40,6 +40,7 @@ public class EyeExercisesActivity extends AppCompatActivity {
             }
         });
 
+
         // Go back to User Profile
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -49,6 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:hint="Write your notes here..."
+            android:textColorHint="@color/light"
             android:padding="10dp"
             android:background="@android:color/white"
             android:textColor="@color/pulink"
@@ -64,6 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/light"
+            android:background="@color/white"
             android:dateTextAppearance="?android:attr/textAppearanceMedium"
             android:layout_margin="10dp" />
 
@@ -79,6 +81,17 @@
             android:textColor="@color/pulink"
             android:textStyle="italic"
             android:layout_marginTop="5dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/tv_exercise_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exercise Status: Not Recorded"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center"/>
 
         <!-- Progress Bar -->

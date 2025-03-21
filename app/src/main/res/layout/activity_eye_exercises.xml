@@ -47,38 +47,14 @@
             android:layout_marginBottom="15dp"
             android:layout_gravity="center"/>
 
-        <!-- YouTube Links Section -->
+        <!-- Additional Information Section -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1. Link: https://www.youtube.com/watch?v=iVb4vUp70zY"
+            android:text="💡 Did you know?\n\n- Regular eye exercises can help reduce eye strain, especially for those who spend long hours in front of screens.\n\n- The 20-20-20 rule was developed to prevent digital eye strain, which is becoming increasingly common.\n\n- Palming helps to relax the eye muscles and can be especially helpful after long periods of focused work."
             android:textSize="18sp"
             android:textColor="@color/black"
-            android:layout_marginBottom="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2. Link: https://www.youtube.com/watch?v=UicwXt3jHvE"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:layout_marginBottom="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3. Link: https://www.youtube.com/watch?v=J6Fz8UqU1vI"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:layout_marginBottom="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="4. Link: https://www.youtube.com/watch?v=SuDb0jmIHK4"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginBottom="20dp"/>
 
         <!-- Back Button Section -->
         <Button
