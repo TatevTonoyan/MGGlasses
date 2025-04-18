@@ -15,11 +15,14 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -146,33 +149,6 @@ public class UserProfileActivity extends AppCompatActivity {
         editor.apply();
     }
 
-    // Menu setup
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.common_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.quiz_m) {
-            startActivity(new Intent(UserProfileActivity.this, QuizActivity.class));
-        } else if (id == R.id.camera_m) {
-            startActivity(new Intent(UserProfileActivity.this, CameraActivity.class));
-        } else if (id == R.id.glass_type_m) {
-            startActivity(new Intent(UserProfileActivity.this, FaceShapeActivity.class));
-        } else if (id == R.id.advices_m) {
-            startActivity(new Intent(UserProfileActivity.this, AdvicesActivity.class));
-        } else if (id == R.id.vitamine_m) {
-            startActivity(new Intent(UserProfileActivity.this, VisionQuizActivity.class));
-        } else {
-            return super.onOptionsItemSelected(item);
-        }
-        return true;
-    }
-
     private void showUserProfile(FirebaseUser firebaseUser) {
         textViewWelcome.setText("MGGlasses!");
         progressBar.setVisibility(View.GONE);
@@ -189,5 +165,23 @@ public class UserProfileActivity extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
+    }
+
+    // Menu setup
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.common_menu, menu);
+        return true;
+    }
+
+    // Menu item handling
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.animation_m) {
+            Intent intent = new Intent(UserProfileActivity.this, ShapeAnimationActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

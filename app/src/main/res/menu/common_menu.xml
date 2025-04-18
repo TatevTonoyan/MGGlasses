@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-    <item android:title="Information"
+    <item
         android:id="@+id/quiz_m"
-        />
-    <item android:title="Camera"
+        android:title="Information" />
+    <item
         android:id="@+id/camera_m"
-        />
-    <item android:title="Advices"
+        android:title="Camera" />
+    <item
         android:id="@+id/advices_m"
-        />
-    <item android:title="Vitamine"
+        android:title="Advices" />
+    <item
         android:id="@+id/vitamine_m"
-        />
-    <item android:title="Glasse type"
+        android:title="Vitamine" />
+    <item
         android:id="@+id/glass_type_m"
-        />
-
+        android:title="Glasse type" />
+    <item
+        android:id="@+id/animation_m"
+        android:title="Animation" />
 </menu>

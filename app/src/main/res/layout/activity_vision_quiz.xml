@@ -16,8 +16,8 @@
         <ImageView
             android:id="@+id/image_quiz"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:srcCompat="@drawable/quiz"
+            android:layout_height="300dp"
+            app:srcCompat="@drawable/doctorwebp"
             android:scaleType="centerInside"/>
 
         <!-- Question Text -->
