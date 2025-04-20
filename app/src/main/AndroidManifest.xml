@@ -15,11 +15,32 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/glasses"
-        android:label="@string/app_name"
+        android:label="@string/MGGlasses"
         android:roundIcon="@drawable/glasses"
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstActivity"
         tools:targetApi="31">
+        <activity
+            android:name=".Warby_ParkerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PersolActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GucciActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OakleyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Ray_BanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GlassesBrandsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".QuizActivity2"
+            android:exported="false" />
         <activity
             android:name=".ShapeAnimationActivity"
             android:exported="false" />

@@ -25,9 +25,9 @@
         <ImageView
             android:id="@+id/profile"
             android:layout_width="325dp"
-            android:layout_height="210dp"
+            android:layout_height="200dp"
             android:layout_gravity="center"
-            android:src="@drawable/logo"
+            android:src="@drawable/blue"
             android:scaleType="centerCrop"
             android:layout_marginTop="20dp"/>
 
@@ -60,41 +60,6 @@
             android:inputType="textMultiLine"
             android:layout_margin="10dp"/>
 
-        <!-- Calendar View -->
-        <CalendarView
-            android:id="@+id/calendarView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/light"
-            android:background="@color/white"
-            android:dateTextAppearance="?android:attr/textAppearanceMedium"
-            android:layout_margin="10dp" />
-
-        <!-- Date Info -->
-        <TextView
-            android:id="@+id/tv_selected_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Selected Date: None"
-            android:textSize="16sp"
-            android:textColor="@color/pulink"
-            android:textStyle="italic"
-            android:layout_marginTop="5dp"
-            android:layout_gravity="center"/>
-
-        <TextView
-            android:id="@+id/tv_exercise_status"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Exercise Status: Not Recorded"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"/>
-
-        <!-- Progress Bar -->
         <ProgressBar
             android:id="@+id/tx_progressBar"
             android:layout_width="wrap_content"
@@ -103,6 +68,30 @@
             android:visibility="gone"
             android:layout_gravity="center"
             android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/quiz_results_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Task Results"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@color/tea_green"
+            android:padding="16dp" />
+        <Button
+            android:id="@+id/start_quiz_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:text="Start Quiz"/>
+
+
 
         <!-- Buttons -->
         <Button

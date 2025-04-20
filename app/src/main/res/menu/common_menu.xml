@@ -20,4 +20,7 @@
     <item
         android:id="@+id/animation_m"
         android:title="Animation" />
+    <item
+        android:id="@+id/action_glasses_brands"
+        android:title="Glasses Brands" />
 </menu>

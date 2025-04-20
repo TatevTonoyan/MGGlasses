@@ -7,6 +7,7 @@ import android.graphics.Path;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.View;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,11 +38,11 @@ public class ShapesAnimationView extends View {
 
     private void init() {
         paintShape.setStyle(Paint.Style.STROKE);
-        paintShape.setColor(0xFF2196F3);
+        paintShape.setColor(0xFF2196F3); // Blue color for shapes
         paintShape.setStrokeWidth(8f);
 
         paintPoint.setStyle(Paint.Style.FILL);
-        paintPoint.setColor(0xFFFF0000);
+        paintPoint.setColor(0xFFFF0000); // Red color for the point
     }
 
     @Override
@@ -65,6 +66,8 @@ public class ShapesAnimationView extends View {
             addTrianglePath();
             addStarPath();
             addZigZagPath();
+            addSpiralPath();
+            addInfinityPath();
             startNextShape();
         });
     }
@@ -190,6 +193,45 @@ public class ShapesAnimationView extends View {
         shapePoints.add(generatePathPoints(path, 300));
     }
 
+    private void addSpiralPath() {
+        float cx = getWidth() / 2f;
+        float cy = getHeight() / 2f;
+        Path path = new Path();
+
+        int steps = 1000;
+        float maxRadius = Math.min(getWidth(), getHeight()) * 0.4f;
+        for (int i = 0; i < steps; i++) {
+            float t = (float) i / steps;
+            float angle = (float) (6 * Math.PI * t);
+            float radius = maxRadius * t;
+            float x = cx + radius * (float) Math.cos(angle);
+            float y = cy + radius * (float) Math.sin(angle);
+            if (i == 0) path.moveTo(x, y);
+            else path.lineTo(x, y);
+        }
+        shapePaths.add(path);
+        shapePoints.add(generatePathPoints(path, 700));
+    }
+
+    private void addInfinityPath() {
+        float cx = getWidth() / 2f;
+        float cy = getHeight() / 2f;
+        float a = 200;
+        float b = 100;
+
+        Path path = new Path();
+        int steps = 600;
+        for (int i = 0; i < steps; i++) {
+            float t = (float) (2 * Math.PI * i / steps);
+            float x = cx + a * (float) Math.sin(t);
+            float y = cy + b * (float) Math.sin(t) * (float) Math.cos(t);
+            if (i == 0) path.moveTo(x, y);
+            else path.lineTo(x, y);
+        }
+        shapePaths.add(path);
+        shapePoints.add(generatePathPoints(path, 600));
+    }
+
     private float[] generateLinePoints(float x1, float y1, float x2, float y2, int steps) {
         float[] pts = new float[steps * 2];
         for (int i = 0; i < steps; i++) {
@@ -214,18 +256,10 @@ public class ShapesAnimationView extends View {
     private float[] generateRectanglePoints(float l, float t, float r, float b, int rounds) {
         List<Float> pts = new ArrayList<>();
         for (int i = 0; i < rounds; i++) {
-            for (float x = l; x <= r; x += 10) {
-                pts.add(x); pts.add(t);
-            }
-            for (float y = t; y <= b; y += 10) {
-                pts.add(r); pts.add(y);
-            }
-            for (float x = r; x >= l; x -= 10) {
-                pts.add(x); pts.add(b);
-            }
-            for (float y = b; y >= t; y -= 10) {
-                pts.add(l); pts.add(y);
-            }
+            for (float x = l; x <= r; x += 10) { pts.add(x); pts.add(t); }
+            for (float y = t; y <= b; y += 10) { pts.add(r); pts.add(y); }
+            for (float x = r; x >= l; x -= 10) { pts.add(x); pts.add(b); }
+            for (float y = b; y >= t; y -= 10) { pts.add(l); pts.add(y); }
         }
         float[] arr = new float[pts.size()];
         for (int i = 0; i < arr.length; i++) arr[i] = pts.get(i);
@@ -252,16 +286,23 @@ public class ShapesAnimationView extends View {
     }
 
     private float[] generatePathPoints(Path path, int steps) {
-        float[] pts = new float[steps * 2];
-        float[] pos = new float[2];
-        android.graphics.PathMeasure measure = new android.graphics.PathMeasure(path, false);
-        float length = measure.getLength();
+        List<Float> pointsList = new ArrayList<>();
+        android.graphics.PathMeasure pathMeasure = new android.graphics.PathMeasure(path, false);
+        float pathLength = pathMeasure.getLength();
+
         for (int i = 0; i < steps; i++) {
-            float distance = i * length / steps;
-            measure.getPosTan(distance, pos, null);
-            pts[i * 2] = pos[0];
-            pts[i * 2 + 1] = pos[1];
+            float distance = (i / (float) (steps - 1)) * pathLength;
+            float[] pos = new float[2];
+            pathMeasure.getPosTan(distance, pos, null);
+            pointsList.add(pos[0]);
+            pointsList.add(pos[1]);
         }
-        return pts;
+
+        float[] points = new float[pointsList.size()];
+        for (int i = 0; i < points.length; i++) {
+            points[i] = pointsList.get(i);
+        }
+
+        return points;
     }
 }

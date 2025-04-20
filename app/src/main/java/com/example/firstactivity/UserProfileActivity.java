@@ -1,9 +1,8 @@
 package com.example.firstactivity;
 
-import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,7 +21,6 @@ import androidx.appcompat.widget.Toolbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.util.HashSet;
 import java.util.Set;
 
 public class UserProfileActivity extends AppCompatActivity {
@@ -35,6 +33,11 @@ public class UserProfileActivity extends AppCompatActivity {
 
     private Set<String> greenDates;
     private Set<String> redDates;
+
+    // ✅ NEW
+    private static final String PREFS_NAME = "MyPrefs";
+    private static final String KEY_EXERCISES_COMPLETED = "exercises_completed";
+    private TextView exerciseCompletionText; // ✅ NEW view
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,40 +55,19 @@ public class UserProfileActivity extends AppCompatActivity {
         // Views
         textViewWelcome = findViewById(R.id.welcome);
         progressBar = findViewById(R.id.tx_progressBar);
-        calendarView = findViewById(R.id.calendarView);
-        textViewSelectedDate = findViewById(R.id.tv_selected_date);
-        textViewExerciseStatus = findViewById(R.id.tv_exercise_status);
         EditText notes = findViewById(R.id.et_notes);
         Button btnEyeExercises = findViewById(R.id.btn_eye_exercises);
         Button btnLogout = findViewById(R.id.btn_logout);
 
-        // SharedPreferences
-        sharedPreferences = getSharedPreferences("exercise_data", MODE_PRIVATE);
-        greenDates = sharedPreferences.getStringSet("greenDates", new HashSet<>());
-        redDates = sharedPreferences.getStringSet("redDates", new HashSet<>());
-
-        // Calendar listener
-        calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
-            String selectedDate = dayOfMonth + "/" + (month + 1) + "/" + year;
-            textViewSelectedDate.setText("Selected Date: " + selectedDate);
-
-            if (greenDates.contains(selectedDate)) {
-                textViewExerciseStatus.setText("Exercise Status: Done ✅");
-                textViewExerciseStatus.setTextColor(Color.GREEN);
-            } else if (redDates.contains(selectedDate)) {
-                textViewExerciseStatus.setText("Exercise Status: Not Done ❌");
-                textViewExerciseStatus.setTextColor(Color.RED);
-            } else {
-                textViewExerciseStatus.setText("Exercise Status: Not Recorded");
-                textViewExerciseStatus.setTextColor(Color.BLACK);
-            }
-
-            askUserExerciseStatus(selectedDate);
-        });
 
         // Button listeners
         btnEyeExercises.setOnClickListener(v -> {
             startActivity(new Intent(this, EyeExercisesActivity.class));
+        });
+        Button quizBtn = findViewById(R.id.start_quiz_button);
+        quizBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(UserProfileActivity.this, QuizActivity2.class);
+            startActivity(intent);
         });
 
         btnLogout.setOnClickListener(v -> logoutUser());
@@ -100,46 +82,6 @@ public class UserProfileActivity extends AppCompatActivity {
         }
     }
 
-    private void askUserExerciseStatus(String date) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Eye Exercises");
-        builder.setMessage("Did you do your eye exercises today?");
-
-        builder.setPositiveButton("Yes", (dialog, which) -> {
-            greenDates.add(date);
-            redDates.remove(date);
-            saveDateColors();
-            updateUI(date, true);
-        });
-
-        builder.setNegativeButton("No", (dialog, which) -> {
-            redDates.add(date);
-            greenDates.remove(date);
-            saveDateColors();
-            updateUI(date, false);
-        });
-
-        builder.setNeutralButton("Cancel", (dialog, which) -> dialog.dismiss());
-
-        builder.create().show();
-    }
-
-    private void updateUI(String date, boolean didExercise) {
-        if (didExercise) {
-            textViewExerciseStatus.setText("Exercise Status: Done ✅");
-            textViewExerciseStatus.setTextColor(Color.GREEN);
-        } else {
-            textViewExerciseStatus.setText("Exercise Status: Not Done ❌");
-            textViewExerciseStatus.setTextColor(Color.RED);
-        }
-    }
-
-    private void saveDateColors() {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putStringSet("greenDates", greenDates);
-        editor.putStringSet("redDates", redDates);
-        editor.apply();
-    }
 
     private void showUserProfile(FirebaseUser firebaseUser) {
         textViewWelcome.setText("MGGlasses!");
@@ -182,6 +124,11 @@ public class UserProfileActivity extends AppCompatActivity {
         } else if (id == android.R.id.home) {
             onBackPressed();
         }
+        else if (id == R.id.action_glasses_brands) {
+            startActivity(new Intent(this, GlassesBrandsActivity.class));
+        }
+
+
 
         return super.onOptionsItemSelected(item);
     }

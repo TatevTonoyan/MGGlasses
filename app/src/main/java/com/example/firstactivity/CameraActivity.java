@@ -2,8 +2,7 @@ package com.example.firstactivity;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.camera.core.Camera;
 import androidx.camera.core.CameraSelector;
@@ -14,7 +13,7 @@ import androidx.lifecycle.LifecycleOwner;
 import com.google.common.util.concurrent.ListenableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import android.view.View;
+
 import androidx.camera.view.PreviewView;
 
 public class CameraActivity extends AppCompatActivity {

@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@drawable/grren"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button_rayban"
+        android:text="Ray-Ban"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/black"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/button_oakley"
+        android:text="Oakley"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/black"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/button_gucci"
+        android:text="Gucci"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/black"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/button_persol"
+        android:text="Persol"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/black"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/button_warby"
+        android:text="Warby Parker"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/black"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:layout_margin="10dp"/>
+</LinearLayout>
