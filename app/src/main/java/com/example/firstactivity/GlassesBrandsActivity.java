@@ -15,7 +15,7 @@ public class GlassesBrandsActivity extends AppCompatActivity {
 
         findViewById(R.id.button_rayban).setOnClickListener(v -> openBrand(Ray_BanActivity.class));
         findViewById(R.id.button_oakley).setOnClickListener(v -> openBrand(OakleyActivity.class));
-        findViewById(R.id.button_gucci).setOnClickListener(v -> openBrand(GucciActivity.class));
+        findViewById(R.id.button_gucci).setOnClickListener(v -> openBrand(GuGlassesActivity.class));
         findViewById(R.id.button_persol).setOnClickListener(v -> openBrand(PersolActivity.class));
         findViewById(R.id.button_warby).setOnClickListener(v -> openBrand(Warby_ParkerActivity.class));
 

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/marm"
+    android:background="@color/cream"
     android:padding="9dp">
     <TextView
         android:layout_width="wrap_content"
@@ -14,7 +14,7 @@
         android:gravity="center"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:textColor="@color/putik"
+        android:textColor="@color/green_primary_dark"
         android:layout_marginBottom="10dp" />
 
 
@@ -25,7 +25,9 @@
         android:textSize="25sp"
         android:textStyle="bold"
         android:layout_marginTop="10dp"
-        android:textColor="@color/putik" />
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/green_primary_dark" />
 
     <RadioGroup
         android:id="@+id/jawline_group"
@@ -66,7 +68,9 @@
         android:layout_marginTop="8dp"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:textColor="@color/putik" />
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/green_primary_dark"  />
 
     <RadioGroup
         android:id="@+id/face_shape_group"
@@ -107,18 +111,18 @@
         android:id="@+id/btn_submit"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/putik"
+        android:backgroundTint="@color/black"
         android:text="My Glasses Recommendation"
         android:textColor="@color/white"
         android:layout_gravity="center"
-        android:textSize="16dp" />
+        android:textSize="18dp" />
 
     <ImageView
         android:id="@+id/image_pinkglasses"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
-        app:srcCompat="@drawable/pinkglass" />
+        app:srcCompat="@drawable/erer" />
 
 
 </LinearLayout>

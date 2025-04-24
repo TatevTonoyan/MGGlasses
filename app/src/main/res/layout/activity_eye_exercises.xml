@@ -15,11 +15,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="50dp"
+            android:layout_gravity="center"
             android:text="Eye Exercises Tips"
             android:textSize="35sp"
             android:textStyle="bold"
-            android:textColor="@color/putik"
+            android:textColor="@color/green_primary_dark"
             android:layout_marginBottom="12dp"/>
 
         <!-- Eye Exercise Tips Section -->
@@ -67,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Back to Profile"
-            android:backgroundTint="@color/putik"
+            android:backgroundTint="@color/black"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:layout_marginBottom="20dp"

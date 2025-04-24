@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GuGlassesActivity">
+
+    <!-- LinearLayout wrapped in ScrollView -->
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/grren"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/gucci_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gucci Glasses"
+            android:textSize="27sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:paddingBottom="16dp" />
+
+        <!-- Image of Gucci Glasses -->
+        <ImageView
+            android:id="@+id/gucci_image"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/gucc"
+            android:contentDescription="Gucci Glasses"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Long History of Gucci Glasses -->
+        <TextView
+            android:id="@+id/gucci_description1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gucci, the Italian luxury brand, has long been associated with high-end fashion, and its eyewear line is no exception. Gucci glasses have become synonymous with style, quality, and luxury. The brand was founded in 1921 by Guccio Gucci in Florence, Italy, and it quickly became known for its leather goods, including bags and shoes. The company expanded over the years to offer a range of high-fashion accessories, including eyewear."
+            android:textSize="16sp"
+            android:lineSpacingExtra="8dp"
+            android:textColor="@color/black"
+            android:paddingBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/gucci_description2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gucci's eyewear collection began in the 1980s and quickly gained popularity for its sophisticated and stylish frames. The glasses are known for their craftsmanship, with frames often made from materials like acetate, titanium, and high-quality metal. Over the years, Gucci has continuously innovated its eyewear designs, keeping up with the latest fashion trends while maintaining the timeless appeal of the brand."
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="8dp"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:id="@+id/gucci_description3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="The Gucci glasses collection is now recognized worldwide for its luxury and fashion-forward designs. From oversized sunglasses to sleek optical frames, each pair of Gucci glasses is crafted with meticulous attention to detail. The brand’s eyewear designs often feature the signature Gucci logo, intricate embellishments, and unique patterns, making them easily recognizable as a symbol of status and sophistication."
+            android:textSize="16sp"
+            android:lineSpacingExtra="8dp"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:id="@+id/gucci_description4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="In addition to their iconic designs, Gucci glasses are also known for their comfort and durability. The frames are designed to not only look stylish but also provide a perfect fit, ensuring long-lasting comfort for the wearer. The brand’s commitment to quality is evident in every pair of glasses, from the materials used to the final construction."
+            android:textSize="16sp"
+            android:lineSpacingExtra="8dp"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:id="@+id/gucci_description5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Today, Gucci glasses continue to be a top choice for individuals who want to make a bold fashion statement. Whether you are looking for classic, understated frames or trendy, avant-garde styles, Gucci eyewear offers a range of options that cater to every taste. As a symbol of luxury, sophistication, and timeless style, Gucci glasses remain a sought-after accessory for fashion enthusiasts around the world."
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="8dp"
+            android:paddingBottom="16dp" />
+
+        <!-- Button to go back to ProfileActivity -->
+        <Button
+            android:id="@+id/btn_back_to_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back to Profile"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/black"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
+
+</ScrollView>

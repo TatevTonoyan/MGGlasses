@@ -38,11 +38,11 @@ public class ShapesAnimationView extends View {
 
     private void init() {
         paintShape.setStyle(Paint.Style.STROKE);
-        paintShape.setColor(0xFF2196F3); // Blue color for shapes
+        paintShape.setColor(0xFF2196F3);
         paintShape.setStrokeWidth(8f);
 
         paintPoint.setStyle(Paint.Style.FILL);
-        paintPoint.setColor(0xFFFF0000); // Red color for the point
+        paintPoint.setColor(0xFFFF0000);
     }
 
     @Override
@@ -52,7 +52,7 @@ public class ShapesAnimationView extends View {
         if (currentShapeIndex < shapePaths.size()) {
             canvas.drawPath(shapePaths.get(currentShapeIndex), paintShape);
         }
-        canvas.drawCircle(pointX, pointY, 25f, paintPoint); // Larger red point
+        canvas.drawCircle(pointX, pointY, 25f, paintPoint);
     }
 
     public void startFullAnimation() {
@@ -68,6 +68,10 @@ public class ShapesAnimationView extends View {
             addZigZagPath();
             addSpiralPath();
             addInfinityPath();
+            addHeartPath();
+            addWavePath();
+            addPentagonPath();
+            addLeafPath();
             startNextShape();
         });
     }
@@ -92,15 +96,15 @@ public class ShapesAnimationView extends View {
                     pointY = points[currentPointIndex + 1];
                     currentPointIndex += 2;
                     invalidate();
-                    handler.postDelayed(this, 30); // Slow & synced movement
+                    handler.postDelayed(this, 30);
                 }
             }
         }, 100);
     }
 
+    // Original Shapes...
     private void addLinePath() {
-        float w = getWidth();
-        float h = getHeight();
+        float w = getWidth(), h = getHeight();
         Path path = new Path();
         path.moveTo(w * 0.2f, h / 2);
         path.lineTo(w * 0.8f, h / 2);
@@ -109,14 +113,12 @@ public class ShapesAnimationView extends View {
     }
 
     private void addCirclePath() {
-        float cx = getWidth() / 2f;
-        float cy = getHeight() / 2f;
+        float cx = getWidth() / 2f, cy = getHeight() / 2f;
         float radius = Math.min(getWidth(), getHeight()) * 0.3f;
-
         Path path = new Path();
         path.addCircle(cx, cy, radius, Path.Direction.CW);
         shapePaths.add(path);
-        shapePoints.add(generateCirclePoints(cx, cy, radius, 3)); // 3 rounds
+        shapePoints.add(generateCirclePoints(cx, cy, radius, 3));
     }
 
     private void addRectanglePath() {
@@ -124,7 +126,6 @@ public class ShapesAnimationView extends View {
         float top = getHeight() * 0.25f;
         float right = getWidth() * 0.75f;
         float bottom = getHeight() * 0.75f;
-
         Path path = new Path();
         path.moveTo(left, top);
         path.lineTo(right, top);
@@ -139,15 +140,10 @@ public class ShapesAnimationView extends View {
         float cx = getWidth() / 2f;
         float cy = getHeight() / 2f;
         float size = Math.min(getWidth(), getHeight()) * 0.3f;
-
+        float x1 = cx, y1 = cy - size;
+        float x2 = cx - size, y2 = cy + size;
+        float x3 = cx + size, y3 = cy + size;
         Path path = new Path();
-        float x1 = cx;
-        float y1 = cy - size;
-        float x2 = cx - size;
-        float y2 = cy + size;
-        float x3 = cx + size;
-        float y3 = cy + size;
-
         path.moveTo(x1, y1);
         path.lineTo(x2, y2);
         path.lineTo(x3, y3);
@@ -157,15 +153,11 @@ public class ShapesAnimationView extends View {
     }
 
     private void addStarPath() {
-        float cx = getWidth() / 2f;
-        float cy = getHeight() / 2f;
-        float outer = 250;
-        float inner = 100;
-
+        float cx = getWidth() / 2f, cy = getHeight() / 2f;
+        float outer = 250, inner = 100;
         Path path = new Path();
         float angle = (float) (-Math.PI / 2);
         path.moveTo(cx + outer * (float) Math.cos(angle), cy + outer * (float) Math.sin(angle));
-
         for (int i = 1; i <= 10; i++) {
             angle += Math.PI / 5;
             float r = (i % 2 == 0) ? outer : inner;
@@ -181,7 +173,6 @@ public class ShapesAnimationView extends View {
         float endX = getWidth() * 0.8f;
         float topY = getHeight() * 0.4f;
         float bottomY = getHeight() * 0.6f;
-
         Path path = new Path();
         path.moveTo(startX, topY);
         for (int i = 0; i < 6; i++) {
@@ -197,7 +188,6 @@ public class ShapesAnimationView extends View {
         float cx = getWidth() / 2f;
         float cy = getHeight() / 2f;
         Path path = new Path();
-
         int steps = 1000;
         float maxRadius = Math.min(getWidth(), getHeight()) * 0.4f;
         for (int i = 0; i < steps; i++) {
@@ -216,9 +206,7 @@ public class ShapesAnimationView extends View {
     private void addInfinityPath() {
         float cx = getWidth() / 2f;
         float cy = getHeight() / 2f;
-        float a = 200;
-        float b = 100;
-
+        float a = 200, b = 100;
         Path path = new Path();
         int steps = 600;
         for (int i = 0; i < steps; i++) {
@@ -228,6 +216,69 @@ public class ShapesAnimationView extends View {
             if (i == 0) path.moveTo(x, y);
             else path.lineTo(x, y);
         }
+        shapePaths.add(path);
+        shapePoints.add(generatePathPoints(path, 600));
+    }
+
+    // ✅ New Shapes
+    private void addHeartPath() {
+        float cx = getWidth() / 2f, cy = getHeight() / 2f;
+        Path path = new Path();
+        int steps = 600;
+        for (int i = 0; i < steps; i++) {
+            float t = (float) (2 * Math.PI * i / steps);
+            float x = 16 * (float) Math.pow(Math.sin(t), 3);
+            float y = 13 * (float) Math.cos(t) - 5 * (float) Math.cos(2 * t) - 2 * (float) Math.cos(3 * t) - (float) Math.cos(4 * t);
+            x *= 15; y *= 15;
+            x += cx; y = cy - y;
+            if (i == 0) path.moveTo(x, y);
+            else path.lineTo(x, y);
+        }
+        shapePaths.add(path);
+        shapePoints.add(generatePathPoints(path, 600));
+    }
+
+    private void addWavePath() {
+        float w = getWidth(), h = getHeight();
+        Path path = new Path();
+        path.moveTo(0, h / 2f);
+        for (int x = 0; x <= w; x += 5) {
+            float y = h / 2f + 100 * (float) Math.sin((float) x / w * 4 * Math.PI);
+            path.lineTo(x, y);
+        }
+        shapePaths.add(path);
+        shapePoints.add(generatePathPoints(path, 600));
+    }
+
+    private void addPentagonPath() {
+        float cx = getWidth() / 2f, cy = getHeight() / 2f;
+        float radius = 200;
+        Path path = new Path();
+        for (int i = 0; i < 5; i++) {
+            double angle = 2 * Math.PI * i / 5 - Math.PI / 2;
+            float x = cx + radius * (float) Math.cos(angle);
+            float y = cy + radius * (float) Math.sin(angle);
+            if (i == 0) path.moveTo(x, y);
+            else path.lineTo(x, y);
+        }
+        path.close();
+        shapePaths.add(path);
+        shapePoints.add(generatePathPoints(path, 600));
+    }
+
+    private void addLeafPath() {
+        float cx = getWidth() / 2f;
+        float cy = getHeight() / 2f;
+        Path path = new Path();
+        path.moveTo(cx, cy);
+        for (int i = 0; i <= 180; i++) {
+            float t = (float) i / 180f * (float) Math.PI;
+            float r = (float) (100 * Math.sin(t) * Math.sqrt(Math.abs(Math.cos(t))));
+            float x = cx + r * (float) Math.cos(t);
+            float y = cy - r * (float) Math.sin(t);
+            path.lineTo(x, y);
+        }
+        path.lineTo(cx, cy);
         shapePaths.add(path);
         shapePoints.add(generatePathPoints(path, 600));
     }
@@ -270,10 +321,8 @@ public class ShapesAnimationView extends View {
         List<Float> pts = new ArrayList<>();
         for (int r = 0; r < rounds; r++) {
             for (int i = 0; i < vertices.length; i += 2) {
-                float x1 = vertices[i];
-                float y1 = vertices[i + 1];
-                float x2 = vertices[(i + 2) % vertices.length];
-                float y2 = vertices[(i + 3) % vertices.length];
+                float x1 = vertices[i], y1 = vertices[i + 1];
+                float x2 = vertices[(i + 2) % vertices.length], y2 = vertices[(i + 3) % vertices.length];
                 for (float t = 0; t <= 1; t += 0.05f) {
                     pts.add(x1 + t * (x2 - x1));
                     pts.add(y1 + t * (y2 - y1));
@@ -302,7 +351,6 @@ public class ShapesAnimationView extends View {
         for (int i = 0; i < points.length; i++) {
             points[i] = pointsList.get(i);
         }
-
         return points;
     }
 }

@@ -26,10 +26,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="15dp"
+            android:layout_gravity="center"
             android:text="Question goes here"
             android:gravity="center"
             android:textSize="25sp"
-            android:textColor="@color/putik"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <!-- Radio Group with Options -->
@@ -88,14 +90,14 @@
         <!-- Next Button -->
         <Button
             android:id="@+id/btn_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/putik"
             android:text="Next"
-            android:textSize="15sp"
-            android:textColor="@color/pulink" />
+             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_margin="10dp" />
+
 
         <!-- Submit Button (Initially Hidden) -->
         <Button
@@ -114,7 +116,6 @@
             android:id="@+id/image_cover"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
             app:srcCompat="@drawable/cover"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"

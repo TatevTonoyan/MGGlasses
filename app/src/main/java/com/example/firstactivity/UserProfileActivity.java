@@ -8,8 +8,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CalendarView;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,23 +19,16 @@ import androidx.appcompat.widget.Toolbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.util.Set;
-
 public class UserProfileActivity extends AppCompatActivity {
 
-    private TextView textViewWelcome, textViewSelectedDate, textViewExerciseStatus;
+    private TextView textViewWelcome, textViewExerciseStatus, quizResultText;
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
-    private CalendarView calendarView;
-    private SharedPreferences sharedPreferences;
 
-    private Set<String> greenDates;
-    private Set<String> redDates;
-
-    // ✅ NEW
     private static final String PREFS_NAME = "MyPrefs";
     private static final String KEY_EXERCISES_COMPLETED = "exercises_completed";
-    private TextView exerciseCompletionText; // ✅ NEW view
+
+    private TextView exerciseCompletionText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,15 +46,16 @@ public class UserProfileActivity extends AppCompatActivity {
         // Views
         textViewWelcome = findViewById(R.id.welcome);
         progressBar = findViewById(R.id.tx_progressBar);
-        EditText notes = findViewById(R.id.et_notes);
+        quizResultText = findViewById(R.id.quiz_results_text);  // TextView to display quiz score
         Button btnEyeExercises = findViewById(R.id.btn_eye_exercises);
         Button btnLogout = findViewById(R.id.btn_logout);
-
+        exerciseCompletionText = findViewById(R.id.exercise_completion_text);
 
         // Button listeners
         btnEyeExercises.setOnClickListener(v -> {
             startActivity(new Intent(this, EyeExercisesActivity.class));
         });
+
         Button quizBtn = findViewById(R.id.start_quiz_button);
         quizBtn.setOnClickListener(v -> {
             Intent intent = new Intent(UserProfileActivity.this, QuizActivity2.class);
@@ -80,12 +72,25 @@ public class UserProfileActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "No user is logged in", Toast.LENGTH_SHORT).show();
         }
-    }
 
+        // Show quiz result if available
+        showQuizResult();
+    }
 
     private void showUserProfile(FirebaseUser firebaseUser) {
         textViewWelcome.setText("MGGlasses!");
         progressBar.setVisibility(View.GONE);
+    }
+
+    private void showQuizResult() {
+        // Retrieve quiz score from SharedPreferences
+        SharedPreferences prefs = getSharedPreferences("quiz_results", Context.MODE_PRIVATE);
+        int score = prefs.getInt("score", -1); // Default value of -1 means no score saved
+        if (score != -1) {
+            quizResultText.setText("Your last quiz score: " + score + "/15");
+        } else {
+            quizResultText.setText("No quiz results yet.");
+        }
     }
 
     private void logoutUser() {
@@ -123,12 +128,9 @@ public class UserProfileActivity extends AppCompatActivity {
             startActivity(new Intent(this, FaceShapeActivity.class));
         } else if (id == android.R.id.home) {
             onBackPressed();
-        }
-        else if (id == R.id.action_glasses_brands) {
+        } else if (id == R.id.action_glasses_brands) {
             startActivity(new Intent(this, GlassesBrandsActivity.class));
         }
-
-
 
         return super.onOptionsItemSelected(item);
     }

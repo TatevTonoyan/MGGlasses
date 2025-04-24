@@ -1,10 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Ray_BanActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- LinearLayout wrapped in ScrollView -->
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/grren"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/rayban_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ray-Ban Glasses"
+            android:textSize="27sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:paddingBottom="16dp" />
+
+        <!-- Image of Ray-Ban Glasses -->
+        <ImageView
+            android:id="@+id/rayban_image"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/ran"
+            android:contentDescription="Ray-Ban Glasses"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- History of Ray-Ban Glasses -->
+        <TextView
+            android:id="@+id/rayban_description1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ray-Ban is an iconic American brand, founded in 1937, known for its eyewear and sunglasses. Their aviator and Wayfarer designs have become cultural symbols."
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="8dp"
+            android:paddingBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/rayban_description2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ray-Ban was originally designed to protect pilots' eyes from sun glare during flights, but quickly gained popularity among civilians for its classic and functional design."
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="8dp"
+            android:paddingBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/rayban_description3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ray-Ban sunglasses continue to be popular due to their timeless designs, such as the Wayfarer and Aviator, and their association with famous personalities."
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="8dp"
+            android:paddingBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/rayban_description4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ray-Ban sunglasses are known for their high quality, durability, and wide variety of styles that cater to different tastes, from classic to contemporary."
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="8dp"
+            android:paddingBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/rayban_description5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Today, Ray-Ban remains one of the most recognized eyewear brands worldwide, offering stylish, high-quality sunglasses for every occasion."
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="8dp"
+            android:paddingBottom="16dp"/>
+
+        <!-- Button to go back to ProfileActivity -->
+        <Button
+            android:id="@+id/btn_back_to_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back to Profile"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/black"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
+</ScrollView>

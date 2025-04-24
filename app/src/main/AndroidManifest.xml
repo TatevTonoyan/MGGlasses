@@ -21,13 +21,17 @@
         android:theme="@style/Theme.FirstActivity"
         tools:targetApi="31">
         <activity
+            android:name=".GuGlassesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GucciActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FirstActivity" />
+        <activity
             android:name=".Warby_ParkerActivity"
             android:exported="false" />
         <activity
             android:name=".PersolActivity"
-            android:exported="false" />
-        <activity
-            android:name=".GucciActivity"
             android:exported="false" />
         <activity
             android:name=".OakleyActivity"

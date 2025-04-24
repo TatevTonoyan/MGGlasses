@@ -20,7 +20,19 @@
     <color name="mint_green">#AAF0D1</color>
     <color name="honeydew">#F0FFF0</color>
     <color name="tea_green">#D0F0C0</color>
-    <color name="celadon">#ACE1AF</color>
+    <color name="celadon">#09384939</color>
+    <color name="green_primary">#2E7D32</color> <!-- rich forest green -->
+    <color name="green_primary_dark">#1B5E20</color> <!-- deeper shade -->
+    <color name="green_accent">#66BB6A</color> <!-- soft and fresh green -->
+
+    <!-- Additional shades for UI variety -->
+    <color name="green_light">#A5D6A7</color>
+    <color name="green_lighter">#C8E6C9</color>
+    <color name="green_background">#E8F5E9</color> <!-- soft background green -->
+
+    <!-- Button and border variations -->
+    <color name="green_button">#388E3C</color>
+    <color name="green_border">#4CAF50</color>
 
 
 </resources>

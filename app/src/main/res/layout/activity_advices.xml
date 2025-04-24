@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F2F5"
+    android:background="@color/cream"
     android:padding="16dp"
     android:scrollbars="none">
 
@@ -24,7 +24,7 @@
             android:textStyle="bold"
             android:gravity="center"
             android:padding="14dp"
-            android:background="#0288D1"
+            android:background="@color/green_primary_dark"
             android:textColor="#FFFFFF"
             android:layout_marginBottom="24dp" />
 
@@ -36,7 +36,7 @@
             android:text="What is Farsightedness?"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="#0288D1"
+            android:textColor="@color/green_primary_dark"
             android:layout_marginBottom="8dp" />
 
         <LinearLayout
@@ -54,7 +54,6 @@
                 android:text="Farsightedness, also called hyperopia, is a condition where distant objects are clearer than nearby ones. It occurs when the eye is too short or the cornea is not curved enough, causing light to focus behind the retina instead of on it."
                 android:textSize="15sp"
                 android:textColor="#4A4A4A"
-
                 android:lineSpacingExtra="3dp"
                 android:layout_marginBottom="12dp" />
 
@@ -65,7 +64,7 @@
                 android:text="Causes of Farsightedness:"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#0288D1"
+                android:textColor="@color/green_primary_dark"
                 android:layout_marginBottom="8dp" />
 
             <TextView
@@ -85,7 +84,7 @@
                 android:text="Symptoms of Farsightedness:"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#0288D1"
+                android:textColor="@color/green_primary_dark"
                 android:layout_marginBottom="8dp" />
 
             <TextView
@@ -105,7 +104,7 @@
                 android:text="Treatment Options for Farsightedness:"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#0288D1"
+                android:textColor="@color/green_primary_dark"
                 android:layout_marginBottom="8dp" />
 
             <TextView
@@ -125,7 +124,7 @@
                 android:text="Tips for Managing Farsightedness:"
                 android:textSize="17sp"
                 android:textStyle="bold"
-                android:textColor="#0288D1"
+                android:textColor="@color/green_primary_dark"
                 android:layout_marginBottom="8dp" />
 
             <LinearLayout
@@ -157,7 +156,7 @@
             android:text="What is Shortsightedness?"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="#0288D1"
+            android:textColor="@color/green_primary_dark"
             android:layout_marginBottom="8dp" />
 
         <LinearLayout
@@ -185,7 +184,7 @@
                 android:text="Causes of Shortsightedness:"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#0288D1"
+                android:textColor="@color/green_primary_dark"
                 android:layout_marginBottom="8dp" />
 
             <TextView
@@ -205,7 +204,7 @@
                 android:text="Symptoms of Shortsightedness:"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#0288D1"
+                android:textColor="@color/green_primary_dark"
                 android:layout_marginBottom="8dp" />
 
             <TextView
@@ -225,7 +224,7 @@
                 android:text="Treatment Options for Shortsightedness:"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#0288D1"
+                android:textColor="@color/green_primary_dark"
                 android:layout_marginBottom="8dp" />
 
             <TextView
@@ -245,7 +244,7 @@
                 android:text="Tips for Managing Shortsightedness:"
                 android:textSize="17sp"
                 android:textStyle="bold"
-                android:textColor="#0288D1"
+                android:textColor="@color/green_primary_dark"
                 android:layout_marginBottom="8dp" />
 
             <LinearLayout
@@ -276,7 +275,7 @@
             android:text="General Eye Care Tips"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="#0288D1"
+            android:textColor="@color/green_primary_dark"
             android:layout_marginBottom="8dp" />
 
         <LinearLayout

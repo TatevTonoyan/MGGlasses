@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="11dp"
             android:text="Your recommended glasses will appear here."
-            android:textColor="@color/putik"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginTop="10dp"
@@ -35,13 +35,13 @@
 
         <Button
             android:id="@+id/btn_back_to_profile"
-            android:layout_width="184dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:backgroundTint="@color/putik"
+            android:backgroundTint="@color/black"
             android:text="Back to Profile"
             android:textSize="15dp"
-            android:textColor="@color/purple" />
+            android:textColor="@color/white" />
 
         <ImageView
             android:id="@+id/image_women"
@@ -75,7 +75,7 @@
             android:text="Face Shapes and Recommended Eyeglass Types"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/putik"
+            android:textColor="@color/green_primary_dark"
             android:layout_marginTop="20dp"
             android:layout_gravity="center"/>
 
@@ -148,7 +148,7 @@
             android:text="Eyeglass Types"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/putik"
+            android:textColor="@color/green_primary_dark"
             android:layout_marginTop="20dp"
             android:layout_gravity="center"/>
 

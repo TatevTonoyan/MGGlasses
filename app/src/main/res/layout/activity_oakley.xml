@@ -1,10 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".OakleyActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/grren"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/oakley_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oakley Glasses"
+            android:textSize="27sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:paddingBottom="16dp" />
+
+        <ImageView
+            android:id="@+id/oakley_image"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/origano"
+            android:contentDescription="Oakley Glasses"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/oakley_description1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Oakley, founded in 1975, is known for producing high-performance eyewear for athletes and outdoor enthusiasts."
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="8dp"
+            android:paddingBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/oakley_description2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Oakley glasses offer high durability and are known for their sleek, bold designs, which are tailored for sports, especially cycling, skiing, and snowboarding."
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="8dp"
+            android:paddingBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/oakley_description3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The Oakley brand is synonymous with innovative technology, especially in lenses, and offers superior comfort, protection, and performance."
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="8dp"
+            android:paddingBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/oakley_description4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Oakley sunglasses continue to be a top choice for athletes and outdoor enthusiasts due to their advanced optical technology and stylish designs."
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="8dp"
+            android:paddingBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/oakley_description5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="With cutting-edge designs and patented lens technologies, Oakley continues to set the standard for eyewear performance and fashion."
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="8dp"
+            android:paddingBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btn_back_to_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back to Profile"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/black"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
+</ScrollView>

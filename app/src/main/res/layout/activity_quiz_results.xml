@@ -22,7 +22,7 @@
         android:paddingBottom="20dp"
         android:layout_gravity="center"
         android:text="Your result will be here!"
-        android:textColor="@color/putik"
+        android:textColor="@color/black"
         android:textSize="26sp"
         android:textStyle="bold" />
 
@@ -30,15 +30,15 @@
         android:id="@+id/btn_back_to_profile"
         android:layout_width="268dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/putik"
+        android:backgroundTint="@color/black"
         android:text="Back to Profile"
         android:textSize="18dp"
         android:layout_gravity="center"
-        android:textColor="@color/purple" />
+        android:textColor="@color/white" />
     <ImageView
         android:id="@+id/image_pill"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         app:srcCompat="@drawable/pill"/>
 </LinearLayout>

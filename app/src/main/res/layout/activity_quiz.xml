@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp"
-        android:background="@color/marm">
+        android:background="@color/cream">
 
         <!-- Title Text -->
         <TextView
@@ -31,7 +31,8 @@
             android:layout_height="wrap_content"
             android:text="Do you have any visual impairment?"
             android:textSize="29sp"
-            android:textColor="@color/putik"
+            android:textColor="@color/green_primary_dark"
+            android:gravity="center"
             android:textStyle="bold"
             android:layout_marginBottom="10dp"
             android:layout_gravity="center"/>
@@ -75,7 +76,8 @@
             android:layout_height="wrap_content"
             android:text="Please enter the difference."
             android:textSize="29sp"
-            android:textColor="@color/putik"
+            android:textColor="@color/green_primary_dark"
+            android:gravity="center"
             android:layout_marginTop="20dp"
             android:textStyle="bold"
             android:layout_marginBottom="10dp"/>
@@ -101,7 +103,8 @@
             android:layout_height="wrap_content"
             android:text="Do you want to see near or far?"
             android:textSize="29sp"
-            android:textColor="@color/putik"
+            android:textColor="@color/green_primary_dark"
+            android:gravity="center"
             android:textStyle="bold"
             android:layout_marginBottom="10dp"
             android:layout_gravity="center"/>
@@ -144,7 +147,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:backgroundTint="@color/pulink"
+            android:backgroundTint="@color/black"
             android:text="Go to Camera"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -158,7 +161,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:text="Thank you for your answer!"
-            android:textColor="@color/putik"
+            android:textColor="@color/green_primary_dark"
             android:textSize="16sp"
             />
 
@@ -167,7 +170,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="20dp"
-            app:srcCompat="@drawable/glasses"
+            app:srcCompat="@drawable/buys"
             android:layout_gravity="center"/>
 
     </LinearLayout>

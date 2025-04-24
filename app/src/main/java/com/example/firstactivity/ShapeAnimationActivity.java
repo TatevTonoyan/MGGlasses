@@ -18,7 +18,6 @@ public class ShapeAnimationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Create the ShapesAnimationView
         shapesView = new ShapesAnimationView(this, () -> {
             SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
             prefs.edit().putBoolean("exerciseCompleted", true).apply();
@@ -29,14 +28,11 @@ public class ShapeAnimationActivity extends AppCompatActivity {
             finish();
         });
 
-        // Create a FrameLayout container to hold all views
         FrameLayout container = new FrameLayout(this);
-        container.setBackgroundColor(Color.parseColor("#F5F5DC")); // Beige color background
+        container.setBackgroundColor(Color.parseColor("#C8E6C9"));
 
-        // Add the ShapesAnimationView to the container
         container.addView(shapesView);
 
-        // Add a TextView for instructions
         TextView instructionText = new TextView(this);
         instructionText.setText("Watch the point move along the shapes!");
         instructionText.setTextSize(30);

@@ -30,6 +30,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -51,6 +54,8 @@ dependencies {
 
     // Lifecycle dependencies
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
 
     // Testing dependencies
     testImplementation(libs.junit)
