@@ -30,7 +30,7 @@
         <ImageView
             android:id="@+id/warby_parker_image"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="wrap_content"
             android:src="@drawable/war"
             android:contentDescription="Warby Parker Glasses"
             android:layout_gravity="center"
