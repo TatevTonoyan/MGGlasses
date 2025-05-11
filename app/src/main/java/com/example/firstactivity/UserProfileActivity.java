@@ -116,8 +116,6 @@ public class UserProfileActivity extends AppCompatActivity {
 
         if (id == R.id.animation_m) {
             startActivity(new Intent(this, ShapeAnimationActivity.class));
-        } else if (id == R.id.quiz_m) {
-            startActivity(new Intent(this, QuizActivity.class));
         } else if (id == R.id.camera_m) {
             startActivity(new Intent(this, CameraActivity.class));
         } else if (id == R.id.advices_m) {

@@ -37,7 +37,6 @@
             android:layout_marginBottom="10dp"
             android:layout_gravity="center"/>
 
-        <!-- RadioGroup with options -->
         <RadioGroup
             android:id="@+id/optionsGroup"
             android:layout_width="match_parent"
@@ -69,22 +68,8 @@
                 android:buttonTint="@color/purple" />
         </RadioGroup>
 
-        <!-- Second Question -->
-        <TextView
-            android:id="@+id/questionText_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Please enter the difference."
-            android:textSize="29sp"
-            android:textColor="@color/green_primary_dark"
-            android:gravity="center"
-            android:layout_marginTop="20dp"
-            android:textStyle="bold"
-            android:layout_marginBottom="10dp"/>
-
-        <!-- EditText for Numeric Input -->
         <EditText
-            android:id="@+id/numberInput"
+            android:id="@+id/prescriptionEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
@@ -96,52 +81,8 @@
             android:padding="12dp"
             android:layout_marginBottom="20dp" />
 
-        <!-- Third Question -->
-        <TextView
-            android:id="@+id/questionText_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Do you want to see near or far?"
-            android:textSize="29sp"
-            android:textColor="@color/green_primary_dark"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:layout_marginBottom="10dp"
-            android:layout_gravity="center"/>
 
-        <!-- RadioGroup for Near/Far Vision -->
-        <RadioGroup
-            android:id="@+id/visionGroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="10dp"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp">
 
-            <RadioButton
-                android:id="@+id/option_near"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Near"
-                android:textSize="18sp"
-                android:padding="8dp"
-                android:textColor="@color/black"
-                android:buttonTint="@color/purple" />
-
-            <RadioButton
-                android:id="@+id/option_far"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Far"
-                android:textSize="18sp"
-                android:padding="8dp"
-                android:textColor="@color/black"
-                android:buttonTint="@color/purple" />
-        </RadioGroup>
-
-        <!-- Submit Button -->
         <Button
             android:id="@+id/submit_button"
             android:layout_width="wrap_content"
@@ -168,7 +109,7 @@
         <!-- Image of Glasses -->
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:srcCompat="@drawable/buys"
             android:layout_gravity="center"/>
