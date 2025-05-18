@@ -23,28 +23,30 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Login");
         }
 
-
+        // Login Button
         Button buttonLogin = findViewById(R.id.button_Login);
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
-                startActivity(intent);
-            }
+        buttonLogin.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
         });
 
+        // Register Button
         Button buttonRegister = findViewById(R.id.button_Register);
-        buttonRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this,RegisterActivity.class);
-                startActivity(intent);
-            }
+        buttonRegister.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+            startActivity(intent);
         });
 
+        // UserProfile (Test User) Button
+        Button buttonUser = findViewById(R.id.button_user);
+        buttonUser.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, UserProfileActivity.class);
+            startActivity(intent);
+        });
     }
 }

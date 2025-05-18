@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/blue"
+            android:src="@drawable/eyik7"
             android:scaleType="centerCrop"
             android:layout_marginTop="20dp"/>
 
