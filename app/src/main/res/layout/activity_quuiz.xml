@@ -38,12 +38,6 @@
         android:gravity="center"
         android:text="Option 1"/>
 
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="60dp"
-        android:src="@drawable/or"
-        android:layout_gravity="center"
-        />
     <Button
         android:id="@+id/option_2"
         android:layout_width="match_parent"
@@ -56,6 +50,34 @@
         android:paddingEnd="10dp"
         android:gravity="center"
         android:layout_marginTop="12dp"/>
+    <!-- Existing option_1 and option_2 buttons... -->
+
+    <Button
+        android:id="@+id/option_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Option 3"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/celadon"
+        android:textSize="20sp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:gravity="center"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:id="@+id/option_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Option 4"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/celadon"
+        android:textSize="20sp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:gravity="center"
+        android:layout_marginTop="12dp" />
+
 
     <Button
         android:id="@+id/next_button"
@@ -69,4 +91,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"/>
+
 </LinearLayout>
